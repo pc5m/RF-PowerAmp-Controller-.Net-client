@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="COMx" Type="System.String" Scope="User">
-      <Value Profile="(Default)">com2</Value>
+      <Value Profile="(Default)">COM2</Value>
     </Setting>
   </Settings>
 </SettingsFile>

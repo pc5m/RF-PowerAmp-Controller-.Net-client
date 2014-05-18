@@ -25,7 +25,7 @@ namespace PAcontroller.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("com2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM2")]
         public string COMx {
             get {
                 return ((string)(this["COMx"]));

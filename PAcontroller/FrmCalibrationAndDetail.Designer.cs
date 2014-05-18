@@ -1547,7 +1547,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 405);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmCalibrationAndDetail";
+            this.ShowIcon = false;
             this.Text = "PA controller,  Calibration and Details";
             this.Load += new System.EventHandler(this.FormDetails_Load);
             this.tabControl1.ResumeLayout(false);

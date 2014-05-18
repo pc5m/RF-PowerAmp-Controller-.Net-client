@@ -369,8 +369,11 @@ namespace PAcontroller
             FrmSelectSerialPort SelectSerialPort = new FrmSelectSerialPort();
             if (DialogResult.OK == SelectSerialPort.ShowDialog())
             {
-                Properties.Settings.Default.COMx = SelectSerialPort.COMx;
-                Properties.Settings.Default.Save();
+                if (SelectSerialPort.COMx != null && SelectSerialPort.COMx != String.Empty)
+                {
+                    Properties.Settings.Default.COMx = SelectSerialPort.COMx;
+                    Properties.Settings.Default.Save();
+                }
             }
         }
     }

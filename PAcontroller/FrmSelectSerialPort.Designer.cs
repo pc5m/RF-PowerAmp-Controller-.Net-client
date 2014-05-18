@@ -39,8 +39,9 @@
             this.cboxSerialPort.FormattingEnabled = true;
             this.cboxSerialPort.Location = new System.Drawing.Point(131, 12);
             this.cboxSerialPort.Name = "cboxSerialPort";
-            this.cboxSerialPort.Size = new System.Drawing.Size(121, 21);
+            this.cboxSerialPort.Size = new System.Drawing.Size(132, 21);
             this.cboxSerialPort.TabIndex = 1;
+            this.cboxSerialPort.Text = "No serial port detected";
             this.cboxSerialPort.SelectedIndexChanged += new System.EventHandler(this.cboxSerialPort_SelectedIndexChanged);
             // 
             // label1
@@ -55,7 +56,7 @@
             // btnOk
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(176, 43);
+            this.btnOk.Location = new System.Drawing.Point(188, 43);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 3;
@@ -76,12 +77,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 78);
+            this.ClientSize = new System.Drawing.Size(273, 78);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboxSerialPort);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmSelectSerialPort";
+            this.ShowIcon = false;
             this.Text = "Select SerialPort";
             this.Load += new System.EventHandler(this.FrmSelectSerialPort_Load);
             this.ResumeLayout(false);
