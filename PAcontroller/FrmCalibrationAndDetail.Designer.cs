@@ -92,18 +92,48 @@
             this.txtIC_ActualAmp = new System.Windows.Forms.TextBox();
             this.txtID_ActualAmp = new System.Windows.Forms.TextBox();
             this.tabPagePower = new System.Windows.Forms.TabPage();
+            this.txtBoxPinpTripADC = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtBoxPinpTrip = new System.Windows.Forms.TextBox();
+            this.btnUpdateControllerPinp = new System.Windows.Forms.Button();
+            this.btnCheckPinp = new System.Windows.Forms.Button();
+            this.dgvPinp = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtPfwrdCalValsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsCalibration = new PAcontroller.dsCalibration();
+            this.txtBoxPreflTripADC = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtBoxPreflTrip = new System.Windows.Forms.TextBox();
+            this.btnUpdateControllerPrefl = new System.Windows.Forms.Button();
+            this.btnCheckPrefl = new System.Windows.Forms.Button();
+            this.dgvPrefl = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.btnPfwrdSendCal = new System.Windows.Forms.Button();
-            this.btnPreflSendCal = new System.Windows.Forms.Button();
-            this.btnPinpSendCal = new System.Windows.Forms.Button();
-            this.btnSWRSendCal = new System.Windows.Forms.Button();
-            this.btnPfwrdCheck = new System.Windows.Forms.Button();
-            this.btnPreflCheck = new System.Windows.Forms.Button();
-            this.btnPinpCheck = new System.Windows.Forms.Button();
-            this.btnSWRCheck = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pforwardInterpValsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtBoxPfwrdTripADC = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtBoxPfwrdTrip = new System.Windows.Forms.TextBox();
+            this.btnUpdateControllerPfwrd = new System.Windows.Forms.Button();
+            this.btnCheckPfrwd = new System.Windows.Forms.Button();
+            this.dgvPfwrd = new System.Windows.Forms.DataGridView();
+            this.powerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aDCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPfwrdTripADC = new System.Windows.Forms.TextBox();
             this.txtPinpTripADC = new System.Windows.Forms.TextBox();
             this.txtTripSWRADC = new System.Windows.Forms.TextBox();
@@ -112,46 +142,14 @@
             this.txtPreflTripWatt = new System.Windows.Forms.TextBox();
             this.txtPinpTripWatt = new System.Windows.Forms.TextBox();
             this.txtSWRTrip = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txtPfwrdTripWattCal = new System.Windows.Forms.TextBox();
-            this.txtPreflTripWattCal = new System.Windows.Forms.TextBox();
-            this.txtPinpTripWattCal = new System.Windows.Forms.TextBox();
-            this.txtSWRTripCal = new System.Windows.Forms.TextBox();
-            this.txtPfwrdW2ADC = new System.Windows.Forms.TextBox();
-            this.txtPreflW2ADC = new System.Windows.Forms.TextBox();
-            this.txtPinpW2ADC = new System.Windows.Forms.TextBox();
-            this.txtPfwrdMaxWatt = new System.Windows.Forms.TextBox();
-            this.txtPreflWattMax = new System.Windows.Forms.TextBox();
-            this.txtPinpWattMax = new System.Windows.Forms.TextBox();
-            this.txtSWRMax = new System.Windows.Forms.TextBox();
-            this.txtPfwrdADC2W = new System.Windows.Forms.TextBox();
-            this.txtPreflADC2W = new System.Windows.Forms.TextBox();
-            this.txtPinpADC2W = new System.Windows.Forms.TextBox();
-            this.txtPfwrdWattCal = new System.Windows.Forms.TextBox();
-            this.txtSWRCal = new System.Windows.Forms.TextBox();
-            this.txtPreflWattCal = new System.Windows.Forms.TextBox();
-            this.txtPinpWattCal = new System.Windows.Forms.TextBox();
             this.txtPfwrdADC = new System.Windows.Forms.TextBox();
             this.txtPreflADC = new System.Windows.Forms.TextBox();
             this.txtPinpADC = new System.Windows.Forms.TextBox();
             this.textBox32 = new System.Windows.Forms.TextBox();
-            this.txtPfwrdADCcal = new System.Windows.Forms.TextBox();
-            this.txtPreflADCcal = new System.Windows.Forms.TextBox();
-            this.txtPinpADCcal = new System.Windows.Forms.TextBox();
-            this.txtSWRADCcal = new System.Windows.Forms.TextBox();
             this.txtPfwrdWatt = new System.Windows.Forms.TextBox();
             this.txtPreflWatt = new System.Windows.Forms.TextBox();
             this.txtPinpWatt = new System.Windows.Forms.TextBox();
@@ -176,6 +174,12 @@
             this.tabControl1.SuspendLayout();
             this.tabPageCurrent.SuspendLayout();
             this.tabPagePower.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPinp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPfwrdCalValsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCalibration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrefl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pforwardInterpValsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPfwrd)).BeginInit();
             this.tabPageTemperature.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -188,7 +192,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(606, 381);
+            this.tabControl1.Size = new System.Drawing.Size(862, 540);
             this.tabControl1.TabIndex = 128;
             // 
             // tabPageCurrent
@@ -256,7 +260,7 @@
             this.tabPageCurrent.Location = new System.Drawing.Point(4, 22);
             this.tabPageCurrent.Name = "tabPageCurrent";
             this.tabPageCurrent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCurrent.Size = new System.Drawing.Size(598, 355);
+            this.tabPageCurrent.Size = new System.Drawing.Size(854, 514);
             this.tabPageCurrent.TabIndex = 0;
             this.tabPageCurrent.Text = "Current";
             this.tabPageCurrent.UseVisualStyleBackColor = true;
@@ -772,18 +776,39 @@
             // 
             // tabPagePower
             // 
+            this.tabPagePower.Controls.Add(this.txtBoxPinpTripADC);
+            this.tabPagePower.Controls.Add(this.label24);
+            this.tabPagePower.Controls.Add(this.label39);
+            this.tabPagePower.Controls.Add(this.txtBoxPinpTrip);
+            this.tabPagePower.Controls.Add(this.btnUpdateControllerPinp);
+            this.tabPagePower.Controls.Add(this.btnCheckPinp);
+            this.tabPagePower.Controls.Add(this.dgvPinp);
+            this.tabPagePower.Controls.Add(this.txtBoxPreflTripADC);
+            this.tabPagePower.Controls.Add(this.label20);
+            this.tabPagePower.Controls.Add(this.label21);
+            this.tabPagePower.Controls.Add(this.txtBoxPreflTrip);
+            this.tabPagePower.Controls.Add(this.btnUpdateControllerPrefl);
+            this.tabPagePower.Controls.Add(this.btnCheckPrefl);
+            this.tabPagePower.Controls.Add(this.dgvPrefl);
+            this.tabPagePower.Controls.Add(this.label26);
+            this.tabPagePower.Controls.Add(this.label27);
+            this.tabPagePower.Controls.Add(this.label28);
+            this.tabPagePower.Controls.Add(this.label38);
+            this.tabPagePower.Controls.Add(this.label18);
             this.tabPagePower.Controls.Add(this.label19);
             this.tabPagePower.Controls.Add(this.label22);
             this.tabPagePower.Controls.Add(this.label23);
-            this.tabPagePower.Controls.Add(this.label27);
-            this.tabPagePower.Controls.Add(this.btnPfwrdSendCal);
-            this.tabPagePower.Controls.Add(this.btnPreflSendCal);
-            this.tabPagePower.Controls.Add(this.btnPinpSendCal);
-            this.tabPagePower.Controls.Add(this.btnSWRSendCal);
-            this.tabPagePower.Controls.Add(this.btnPfwrdCheck);
-            this.tabPagePower.Controls.Add(this.btnPreflCheck);
-            this.tabPagePower.Controls.Add(this.btnPinpCheck);
-            this.tabPagePower.Controls.Add(this.btnSWRCheck);
+            this.tabPagePower.Controls.Add(this.label7);
+            this.tabPagePower.Controls.Add(this.label8);
+            this.tabPagePower.Controls.Add(this.label9);
+            this.tabPagePower.Controls.Add(this.label17);
+            this.tabPagePower.Controls.Add(this.txtBoxPfwrdTripADC);
+            this.tabPagePower.Controls.Add(this.label35);
+            this.tabPagePower.Controls.Add(this.label37);
+            this.tabPagePower.Controls.Add(this.txtBoxPfwrdTrip);
+            this.tabPagePower.Controls.Add(this.btnUpdateControllerPfwrd);
+            this.tabPagePower.Controls.Add(this.btnCheckPfrwd);
+            this.tabPagePower.Controls.Add(this.dgvPfwrd);
             this.tabPagePower.Controls.Add(this.txtPfwrdTripADC);
             this.tabPagePower.Controls.Add(this.txtPinpTripADC);
             this.tabPagePower.Controls.Add(this.txtTripSWRADC);
@@ -792,46 +817,14 @@
             this.tabPagePower.Controls.Add(this.txtPreflTripWatt);
             this.tabPagePower.Controls.Add(this.txtPinpTripWatt);
             this.tabPagePower.Controls.Add(this.txtSWRTrip);
-            this.tabPagePower.Controls.Add(this.label7);
-            this.tabPagePower.Controls.Add(this.label8);
-            this.tabPagePower.Controls.Add(this.label9);
             this.tabPagePower.Controls.Add(this.label14);
             this.tabPagePower.Controls.Add(this.label15);
             this.tabPagePower.Controls.Add(this.label16);
-            this.tabPagePower.Controls.Add(this.label17);
-            this.tabPagePower.Controls.Add(this.label18);
-            this.tabPagePower.Controls.Add(this.label20);
-            this.tabPagePower.Controls.Add(this.label21);
-            this.tabPagePower.Controls.Add(this.label24);
             this.tabPagePower.Controls.Add(this.label25);
-            this.tabPagePower.Controls.Add(this.label26);
-            this.tabPagePower.Controls.Add(this.label28);
-            this.tabPagePower.Controls.Add(this.txtPfwrdTripWattCal);
-            this.tabPagePower.Controls.Add(this.txtPreflTripWattCal);
-            this.tabPagePower.Controls.Add(this.txtPinpTripWattCal);
-            this.tabPagePower.Controls.Add(this.txtSWRTripCal);
-            this.tabPagePower.Controls.Add(this.txtPfwrdW2ADC);
-            this.tabPagePower.Controls.Add(this.txtPreflW2ADC);
-            this.tabPagePower.Controls.Add(this.txtPinpW2ADC);
-            this.tabPagePower.Controls.Add(this.txtPfwrdMaxWatt);
-            this.tabPagePower.Controls.Add(this.txtPreflWattMax);
-            this.tabPagePower.Controls.Add(this.txtPinpWattMax);
-            this.tabPagePower.Controls.Add(this.txtSWRMax);
-            this.tabPagePower.Controls.Add(this.txtPfwrdADC2W);
-            this.tabPagePower.Controls.Add(this.txtPreflADC2W);
-            this.tabPagePower.Controls.Add(this.txtPinpADC2W);
-            this.tabPagePower.Controls.Add(this.txtPfwrdWattCal);
-            this.tabPagePower.Controls.Add(this.txtSWRCal);
-            this.tabPagePower.Controls.Add(this.txtPreflWattCal);
-            this.tabPagePower.Controls.Add(this.txtPinpWattCal);
             this.tabPagePower.Controls.Add(this.txtPfwrdADC);
             this.tabPagePower.Controls.Add(this.txtPreflADC);
             this.tabPagePower.Controls.Add(this.txtPinpADC);
             this.tabPagePower.Controls.Add(this.textBox32);
-            this.tabPagePower.Controls.Add(this.txtPfwrdADCcal);
-            this.tabPagePower.Controls.Add(this.txtPreflADCcal);
-            this.tabPagePower.Controls.Add(this.txtPinpADCcal);
-            this.tabPagePower.Controls.Add(this.txtSWRADCcal);
             this.tabPagePower.Controls.Add(this.txtPfwrdWatt);
             this.tabPagePower.Controls.Add(this.txtPreflWatt);
             this.tabPagePower.Controls.Add(this.txtPinpWatt);
@@ -839,132 +832,379 @@
             this.tabPagePower.Location = new System.Drawing.Point(4, 22);
             this.tabPagePower.Name = "tabPagePower";
             this.tabPagePower.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePower.Size = new System.Drawing.Size(598, 355);
+            this.tabPagePower.Size = new System.Drawing.Size(854, 514);
             this.tabPagePower.TabIndex = 1;
             this.tabPagePower.Text = "Power";
             this.tabPagePower.UseVisualStyleBackColor = true;
             this.tabPagePower.Enter += new System.EventHandler(this.tabPagePower_Enter);
             this.tabPagePower.Leave += new System.EventHandler(this.tabPagePower_Leave);
             // 
-            // label19
+            // txtBoxPinpTripADC
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(27, 323);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(33, 13);
-            this.label19.TabIndex = 287;
-            this.label19.Text = "SWR";
+            this.txtBoxPinpTripADC.Location = new System.Drawing.Point(482, 441);
+            this.txtBoxPinpTripADC.Name = "txtBoxPinpTripADC";
+            this.txtBoxPinpTripADC.ReadOnly = true;
+            this.txtBoxPinpTripADC.Size = new System.Drawing.Size(58, 20);
+            this.txtBoxPinpTripADC.TabIndex = 324;
             // 
-            // label22
+            // label24
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(29, 293);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(31, 13);
-            this.label22.TabIndex = 286;
-            this.label22.Text = "Input";
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(389, 445);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(71, 13);
+            this.label24.TabIndex = 325;
+            this.label24.Text = "New ADC trip";
             // 
-            // label23
+            // label39
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 262);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(53, 13);
-            this.label23.TabIndex = 285;
-            this.label23.Text = "Reflected";
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(393, 381);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(81, 13);
+            this.label39.TabIndex = 323;
+            this.label39.Text = "New power trip:";
+            // 
+            // txtBoxPinpTrip
+            // 
+            this.txtBoxPinpTrip.Location = new System.Drawing.Point(482, 377);
+            this.txtBoxPinpTrip.Name = "txtBoxPinpTrip";
+            this.txtBoxPinpTrip.Size = new System.Drawing.Size(58, 20);
+            this.txtBoxPinpTrip.TabIndex = 322;
+            // 
+            // btnUpdateControllerPinp
+            // 
+            this.btnUpdateControllerPinp.Location = new System.Drawing.Point(392, 476);
+            this.btnUpdateControllerPinp.Name = "btnUpdateControllerPinp";
+            this.btnUpdateControllerPinp.Size = new System.Drawing.Size(148, 23);
+            this.btnUpdateControllerPinp.TabIndex = 321;
+            this.btnUpdateControllerPinp.Text = "Update controller Pfwrd";
+            this.btnUpdateControllerPinp.UseVisualStyleBackColor = true;
+            this.btnUpdateControllerPinp.Click += new System.EventHandler(this.btnUpdateControllerPinp_Click);
+            // 
+            // btnCheckPinp
+            // 
+            this.btnCheckPinp.Location = new System.Drawing.Point(421, 404);
+            this.btnCheckPinp.Name = "btnCheckPinp";
+            this.btnCheckPinp.Size = new System.Drawing.Size(90, 23);
+            this.btnCheckPinp.TabIndex = 320;
+            this.btnCheckPinp.Text = "Check Pfwrd";
+            this.btnCheckPinp.UseVisualStyleBackColor = true;
+            this.btnCheckPinp.Click += new System.EventHandler(this.btnCheckPinput_Click);
+            // 
+            // dgvPinp
+            // 
+            this.dgvPinp.AutoGenerateColumns = false;
+            this.dgvPinp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPinp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.dgvPinp.DataSource = this.dtPfwrdCalValsBindingSource;
+            this.dgvPinp.Location = new System.Drawing.Point(392, 183);
+            this.dgvPinp.Name = "dgvPinp";
+            this.dgvPinp.Size = new System.Drawing.Size(148, 172);
+            this.dgvPinp.TabIndex = 319;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Power";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Power";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 52;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ADC";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ADC";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 52;
+            // 
+            // dtPfwrdCalValsBindingSource
+            // 
+            this.dtPfwrdCalValsBindingSource.DataMember = "dtPfwrdCalVals";
+            this.dtPfwrdCalValsBindingSource.DataSource = this.dsCalibration;
+            // 
+            // dsCalibration
+            // 
+            this.dsCalibration.DataSetName = "dsCalibration";
+            this.dsCalibration.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txtBoxPreflTripADC
+            // 
+            this.txtBoxPreflTripADC.Location = new System.Drawing.Point(295, 441);
+            this.txtBoxPreflTripADC.Name = "txtBoxPreflTripADC";
+            this.txtBoxPreflTripADC.ReadOnly = true;
+            this.txtBoxPreflTripADC.Size = new System.Drawing.Size(58, 20);
+            this.txtBoxPreflTripADC.TabIndex = 317;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(202, 445);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(71, 13);
+            this.label20.TabIndex = 318;
+            this.label20.Text = "New ADC trip";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(206, 381);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(81, 13);
+            this.label21.TabIndex = 316;
+            this.label21.Text = "New power trip:";
+            // 
+            // txtBoxPreflTrip
+            // 
+            this.txtBoxPreflTrip.Location = new System.Drawing.Point(295, 377);
+            this.txtBoxPreflTrip.Name = "txtBoxPreflTrip";
+            this.txtBoxPreflTrip.Size = new System.Drawing.Size(58, 20);
+            this.txtBoxPreflTrip.TabIndex = 315;
+            // 
+            // btnUpdateControllerPrefl
+            // 
+            this.btnUpdateControllerPrefl.Location = new System.Drawing.Point(205, 476);
+            this.btnUpdateControllerPrefl.Name = "btnUpdateControllerPrefl";
+            this.btnUpdateControllerPrefl.Size = new System.Drawing.Size(148, 23);
+            this.btnUpdateControllerPrefl.TabIndex = 314;
+            this.btnUpdateControllerPrefl.Text = "Update controller Pfwrd";
+            this.btnUpdateControllerPrefl.UseVisualStyleBackColor = true;
+            this.btnUpdateControllerPrefl.Click += new System.EventHandler(this.btnUpdateControllerPrefl_Click);
+            // 
+            // btnCheckPrefl
+            // 
+            this.btnCheckPrefl.Location = new System.Drawing.Point(234, 404);
+            this.btnCheckPrefl.Name = "btnCheckPrefl";
+            this.btnCheckPrefl.Size = new System.Drawing.Size(90, 23);
+            this.btnCheckPrefl.TabIndex = 313;
+            this.btnCheckPrefl.Text = "Check Pfwrd";
+            this.btnCheckPrefl.UseVisualStyleBackColor = true;
+            this.btnCheckPrefl.Click += new System.EventHandler(this.btnCheckPrefl_Click);
+            // 
+            // dgvPrefl
+            // 
+            this.dgvPrefl.AutoGenerateColumns = false;
+            this.dgvPrefl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrefl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dgvPrefl.DataSource = this.dtPfwrdCalValsBindingSource;
+            this.dgvPrefl.Location = new System.Drawing.Point(205, 183);
+            this.dgvPrefl.Name = "dgvPrefl";
+            this.dgvPrefl.Size = new System.Drawing.Size(148, 172);
+            this.dgvPrefl.TabIndex = 312;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Power";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Power";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 52;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ADC";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ADC";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 52;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(612, 65);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(33, 13);
+            this.label26.TabIndex = 309;
+            this.label26.Text = "SWR";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(15, 233);
+            this.label27.Location = new System.Drawing.Point(612, 91);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(45, 13);
-            this.label27.TabIndex = 284;
-            this.label27.Text = "Forward";
+            this.label27.Size = new System.Drawing.Size(54, 13);
+            this.label27.TabIndex = 310;
+            this.label27.Text = "Trip SWR";
             // 
-            // btnPfwrdSendCal
+            // label28
             // 
-            this.btnPfwrdSendCal.Location = new System.Drawing.Point(454, 227);
-            this.btnPfwrdSendCal.Name = "btnPfwrdSendCal";
-            this.btnPfwrdSendCal.Size = new System.Drawing.Size(124, 23);
-            this.btnPfwrdSendCal.TabIndex = 267;
-            this.btnPfwrdSendCal.Text = "update controller";
-            this.btnPfwrdSendCal.UseVisualStyleBackColor = true;
-            this.btnPfwrdSendCal.Click += new System.EventHandler(this.bntPfwrdSendCal_Click);
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(612, 117);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(79, 13);
+            this.label28.TabIndex = 311;
+            this.label28.Text = "Trip ADC SWR";
             // 
-            // btnPreflSendCal
+            // label38
             // 
-            this.btnPreflSendCal.Location = new System.Drawing.Point(454, 256);
-            this.btnPreflSendCal.Name = "btnPreflSendCal";
-            this.btnPreflSendCal.Size = new System.Drawing.Size(124, 23);
-            this.btnPreflSendCal.TabIndex = 281;
-            this.btnPreflSendCal.Text = "update controller";
-            this.btnPreflSendCal.UseVisualStyleBackColor = true;
-            this.btnPreflSendCal.Click += new System.EventHandler(this.btnPreflSendCal_Click);
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(612, 40);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(58, 13);
+            this.label38.TabIndex = 308;
+            this.label38.Text = "SWR ADC";
             // 
-            // btnPinpSendCal
+            // label18
             // 
-            this.btnPinpSendCal.Location = new System.Drawing.Point(454, 288);
-            this.btnPinpSendCal.Name = "btnPinpSendCal";
-            this.btnPinpSendCal.Size = new System.Drawing.Size(124, 23);
-            this.btnPinpSendCal.TabIndex = 282;
-            this.btnPinpSendCal.Text = "update controller";
-            this.btnPinpSendCal.UseVisualStyleBackColor = true;
-            this.btnPinpSendCal.Click += new System.EventHandler(this.btnPinpSendCal_Click);
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(396, 69);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(63, 13);
+            this.label18.TabIndex = 305;
+            this.label18.Text = "Input power";
             // 
-            // btnSWRSendCal
+            // label19
             // 
-            this.btnSWRSendCal.Location = new System.Drawing.Point(454, 317);
-            this.btnSWRSendCal.Name = "btnSWRSendCal";
-            this.btnSWRSendCal.Size = new System.Drawing.Size(124, 23);
-            this.btnSWRSendCal.TabIndex = 283;
-            this.btnSWRSendCal.Text = "update controller";
-            this.btnSWRSendCal.UseVisualStyleBackColor = true;
-            this.btnSWRSendCal.Click += new System.EventHandler(this.btnSWRSendCal_Click);
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(396, 95);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(57, 13);
+            this.label19.TabIndex = 306;
+            this.label19.Text = "Trip power";
             // 
-            // btnPfwrdCheck
+            // label22
             // 
-            this.btnPfwrdCheck.Location = new System.Drawing.Point(291, 227);
-            this.btnPfwrdCheck.Name = "btnPfwrdCheck";
-            this.btnPfwrdCheck.Size = new System.Drawing.Size(75, 23);
-            this.btnPfwrdCheck.TabIndex = 256;
-            this.btnPfwrdCheck.Text = "Check";
-            this.btnPfwrdCheck.UseVisualStyleBackColor = true;
-            this.btnPfwrdCheck.Click += new System.EventHandler(this.btnPfwrdCheck_Click);
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(396, 121);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(50, 13);
+            this.label22.TabIndex = 307;
+            this.label22.Text = "Trip ADC";
             // 
-            // btnPreflCheck
+            // label23
             // 
-            this.btnPreflCheck.Location = new System.Drawing.Point(291, 256);
-            this.btnPreflCheck.Name = "btnPreflCheck";
-            this.btnPreflCheck.Size = new System.Drawing.Size(75, 23);
-            this.btnPreflCheck.TabIndex = 278;
-            this.btnPreflCheck.Text = "Check";
-            this.btnPreflCheck.UseVisualStyleBackColor = true;
-            this.btnPreflCheck.Click += new System.EventHandler(this.btnPreflCheck_Click);
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(396, 45);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(56, 13);
+            this.label23.TabIndex = 304;
+            this.label23.Text = "Input ADC";
             // 
-            // btnPinpCheck
+            // label7
             // 
-            this.btnPinpCheck.Location = new System.Drawing.Point(291, 288);
-            this.btnPinpCheck.Name = "btnPinpCheck";
-            this.btnPinpCheck.Size = new System.Drawing.Size(75, 23);
-            this.btnPinpCheck.TabIndex = 279;
-            this.btnPinpCheck.Text = "Check";
-            this.btnPinpCheck.UseVisualStyleBackColor = true;
-            this.btnPinpCheck.Click += new System.EventHandler(this.btnPinpCheck_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(205, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 13);
+            this.label7.TabIndex = 301;
+            this.label7.Text = "Refl.  power";
             // 
-            // btnSWRCheck
+            // label8
             // 
-            this.btnSWRCheck.Location = new System.Drawing.Point(291, 317);
-            this.btnSWRCheck.Name = "btnSWRCheck";
-            this.btnSWRCheck.Size = new System.Drawing.Size(75, 23);
-            this.btnSWRCheck.TabIndex = 280;
-            this.btnSWRCheck.Text = "Check";
-            this.btnSWRCheck.UseVisualStyleBackColor = true;
-            this.btnSWRCheck.Click += new System.EventHandler(this.btnSWRCheck_Click);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(205, 95);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 13);
+            this.label8.TabIndex = 302;
+            this.label8.Text = "Trip power";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(205, 121);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 13);
+            this.label9.TabIndex = 303;
+            this.label9.Text = "Trip ADC";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(205, 45);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(57, 13);
+            this.label17.TabIndex = 300;
+            this.label17.Text = "Refl.  ADC";
+            // 
+            // pforwardInterpValsBindingSource
+            // 
+            this.pforwardInterpValsBindingSource.DataMember = "dtPfwrd_RC_B_ADC2W";
+            this.pforwardInterpValsBindingSource.DataSource = this.dsCalibration;
+            // 
+            // txtBoxPfwrdTripADC
+            // 
+            this.txtBoxPfwrdTripADC.Location = new System.Drawing.Point(112, 441);
+            this.txtBoxPfwrdTripADC.Name = "txtBoxPfwrdTripADC";
+            this.txtBoxPfwrdTripADC.ReadOnly = true;
+            this.txtBoxPfwrdTripADC.Size = new System.Drawing.Size(58, 20);
+            this.txtBoxPfwrdTripADC.TabIndex = 297;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(19, 445);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(71, 13);
+            this.label35.TabIndex = 298;
+            this.label35.Text = "New ADC trip";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(23, 381);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(81, 13);
+            this.label37.TabIndex = 296;
+            this.label37.Text = "New power trip:";
+            // 
+            // txtBoxPfwrdTrip
+            // 
+            this.txtBoxPfwrdTrip.Location = new System.Drawing.Point(112, 377);
+            this.txtBoxPfwrdTrip.Name = "txtBoxPfwrdTrip";
+            this.txtBoxPfwrdTrip.Size = new System.Drawing.Size(58, 20);
+            this.txtBoxPfwrdTrip.TabIndex = 294;
+            // 
+            // btnUpdateControllerPfwrd
+            // 
+            this.btnUpdateControllerPfwrd.Location = new System.Drawing.Point(22, 476);
+            this.btnUpdateControllerPfwrd.Name = "btnUpdateControllerPfwrd";
+            this.btnUpdateControllerPfwrd.Size = new System.Drawing.Size(148, 23);
+            this.btnUpdateControllerPfwrd.TabIndex = 293;
+            this.btnUpdateControllerPfwrd.Text = "Update controller Pfwrd";
+            this.btnUpdateControllerPfwrd.UseVisualStyleBackColor = true;
+            this.btnUpdateControllerPfwrd.Click += new System.EventHandler(this.btnUpdateControllerPfwrd_Click);
+            // 
+            // btnCheckPfrwd
+            // 
+            this.btnCheckPfrwd.Location = new System.Drawing.Point(51, 404);
+            this.btnCheckPfrwd.Name = "btnCheckPfrwd";
+            this.btnCheckPfrwd.Size = new System.Drawing.Size(90, 23);
+            this.btnCheckPfrwd.TabIndex = 291;
+            this.btnCheckPfrwd.Text = "Check Pfwrd";
+            this.btnCheckPfrwd.UseVisualStyleBackColor = true;
+            this.btnCheckPfrwd.Click += new System.EventHandler(this.btnCheckPfrwd_Click);
+            // 
+            // dgvPfwrd
+            // 
+            this.dgvPfwrd.AutoGenerateColumns = false;
+            this.dgvPfwrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPfwrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.powerDataGridViewTextBoxColumn,
+            this.aDCDataGridViewTextBoxColumn});
+            this.dgvPfwrd.DataSource = this.dtPfwrdCalValsBindingSource;
+            this.dgvPfwrd.Location = new System.Drawing.Point(22, 183);
+            this.dgvPfwrd.Name = "dgvPfwrd";
+            this.dgvPfwrd.Size = new System.Drawing.Size(148, 172);
+            this.dgvPfwrd.TabIndex = 288;
+            // 
+            // powerDataGridViewTextBoxColumn
+            // 
+            this.powerDataGridViewTextBoxColumn.DataPropertyName = "Power";
+            this.powerDataGridViewTextBoxColumn.HeaderText = "Power";
+            this.powerDataGridViewTextBoxColumn.Name = "powerDataGridViewTextBoxColumn";
+            this.powerDataGridViewTextBoxColumn.Width = 52;
+            // 
+            // aDCDataGridViewTextBoxColumn
+            // 
+            this.aDCDataGridViewTextBoxColumn.DataPropertyName = "ADC";
+            this.aDCDataGridViewTextBoxColumn.HeaderText = "ADC";
+            this.aDCDataGridViewTextBoxColumn.Name = "aDCDataGridViewTextBoxColumn";
+            this.aDCDataGridViewTextBoxColumn.Width = 52;
             // 
             // txtPfwrdTripADC
             // 
-            this.txtPfwrdTripADC.Location = new System.Drawing.Point(328, 51);
+            this.txtPfwrdTripADC.Location = new System.Drawing.Point(112, 117);
             this.txtPfwrdTripADC.Name = "txtPfwrdTripADC";
             this.txtPfwrdTripADC.ReadOnly = true;
             this.txtPfwrdTripADC.Size = new System.Drawing.Size(58, 20);
@@ -972,7 +1212,7 @@
             // 
             // txtPinpTripADC
             // 
-            this.txtPinpTripADC.Location = new System.Drawing.Point(328, 102);
+            this.txtPinpTripADC.Location = new System.Drawing.Point(482, 117);
             this.txtPinpTripADC.Name = "txtPinpTripADC";
             this.txtPinpTripADC.ReadOnly = true;
             this.txtPinpTripADC.Size = new System.Drawing.Size(58, 20);
@@ -981,7 +1221,7 @@
             // txtTripSWRADC
             // 
             this.txtTripSWRADC.AccessibleDescription = "txt";
-            this.txtTripSWRADC.Location = new System.Drawing.Point(328, 128);
+            this.txtTripSWRADC.Location = new System.Drawing.Point(697, 114);
             this.txtTripSWRADC.Name = "txtTripSWRADC";
             this.txtTripSWRADC.ReadOnly = true;
             this.txtTripSWRADC.Size = new System.Drawing.Size(58, 20);
@@ -989,7 +1229,7 @@
             // 
             // txtPreflTripADC
             // 
-            this.txtPreflTripADC.Location = new System.Drawing.Point(328, 76);
+            this.txtPreflTripADC.Location = new System.Drawing.Point(291, 117);
             this.txtPreflTripADC.Name = "txtPreflTripADC";
             this.txtPreflTripADC.ReadOnly = true;
             this.txtPreflTripADC.Size = new System.Drawing.Size(58, 20);
@@ -997,7 +1237,7 @@
             // 
             // txtPfwrdTripWatt
             // 
-            this.txtPfwrdTripWatt.Location = new System.Drawing.Point(254, 51);
+            this.txtPfwrdTripWatt.Location = new System.Drawing.Point(112, 91);
             this.txtPfwrdTripWatt.Name = "txtPfwrdTripWatt";
             this.txtPfwrdTripWatt.ReadOnly = true;
             this.txtPfwrdTripWatt.Size = new System.Drawing.Size(58, 20);
@@ -1005,7 +1245,7 @@
             // 
             // txtPreflTripWatt
             // 
-            this.txtPreflTripWatt.Location = new System.Drawing.Point(254, 76);
+            this.txtPreflTripWatt.Location = new System.Drawing.Point(291, 91);
             this.txtPreflTripWatt.Name = "txtPreflTripWatt";
             this.txtPreflTripWatt.ReadOnly = true;
             this.txtPreflTripWatt.Size = new System.Drawing.Size(58, 20);
@@ -1013,7 +1253,7 @@
             // 
             // txtPinpTripWatt
             // 
-            this.txtPinpTripWatt.Location = new System.Drawing.Point(254, 102);
+            this.txtPinpTripWatt.Location = new System.Drawing.Point(482, 91);
             this.txtPinpTripWatt.Name = "txtPinpTripWatt";
             this.txtPinpTripWatt.ReadOnly = true;
             this.txtPinpTripWatt.Size = new System.Drawing.Size(58, 20);
@@ -1021,52 +1261,25 @@
             // 
             // txtSWRTrip
             // 
-            this.txtSWRTrip.Location = new System.Drawing.Point(254, 128);
+            this.txtSWRTrip.Location = new System.Drawing.Point(697, 88);
             this.txtSWRTrip.Name = "txtSWRTrip";
             this.txtSWRTrip.ReadOnly = true;
             this.txtSWRTrip.Size = new System.Drawing.Size(58, 20);
             this.txtSWRTrip.TabIndex = 271;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(511, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 26);
-            this.label7.TabIndex = 241;
-            this.label7.Text = "Conversion\r\nFactor2";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(429, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 26);
-            this.label8.TabIndex = 236;
-            this.label8.Text = "Conversion\r\nFactor1";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(69, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 26);
-            this.label9.TabIndex = 230;
-            this.label9.Text = "ADC value\r\n0 - 1023";
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(150, 22);
+            this.label14.Location = new System.Drawing.Point(26, 69);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 26);
+            this.label14.Size = new System.Drawing.Size(77, 13);
             this.label14.TabIndex = 231;
-            this.label14.Text = "Value\r\nCalculated";
+            this.label14.Text = "Forward power";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(251, 35);
+            this.label15.Location = new System.Drawing.Point(26, 95);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(57, 13);
             this.label15.TabIndex = 272;
@@ -1075,223 +1288,24 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(325, 35);
+            this.label16.Location = new System.Drawing.Point(26, 121);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(50, 13);
             this.label16.TabIndex = 277;
             this.label16.Text = "Trip ADC";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(224, 201);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(57, 26);
-            this.label17.TabIndex = 266;
-            this.label17.Text = "Trip power\r\nto be set";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(375, 201);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(59, 26);
-            this.label18.TabIndex = 261;
-            this.label18.Text = "Max power\r\nto display";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(29, 135);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(33, 13);
-            this.label20.TabIndex = 228;
-            this.label20.Text = "SWR";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(31, 105);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(31, 13);
-            this.label21.TabIndex = 226;
-            this.label21.Text = "Input";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(10, 83);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(53, 13);
-            this.label24.TabIndex = 224;
-            this.label24.Text = "Reflected";
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(18, 54);
+            this.label25.Location = new System.Drawing.Point(26, 45);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(45, 13);
+            this.label25.Size = new System.Drawing.Size(70, 13);
             this.label25.TabIndex = 222;
-            this.label25.Text = "Forward";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(151, 201);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(61, 26);
-            this.label26.TabIndex = 255;
-            this.label26.Text = "Value [W]\r\nTo be used";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(69, 201);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(58, 26);
-            this.label28.TabIndex = 254;
-            this.label28.Text = "ADC value\r\n0 - 1023";
-            // 
-            // txtPfwrdTripWattCal
-            // 
-            this.txtPfwrdTripWattCal.Location = new System.Drawing.Point(227, 230);
-            this.txtPfwrdTripWattCal.Name = "txtPfwrdTripWattCal";
-            this.txtPfwrdTripWattCal.Size = new System.Drawing.Size(58, 20);
-            this.txtPfwrdTripWattCal.TabIndex = 262;
-            // 
-            // txtPreflTripWattCal
-            // 
-            this.txtPreflTripWattCal.Location = new System.Drawing.Point(227, 259);
-            this.txtPreflTripWattCal.Name = "txtPreflTripWattCal";
-            this.txtPreflTripWattCal.Size = new System.Drawing.Size(58, 20);
-            this.txtPreflTripWattCal.TabIndex = 263;
-            // 
-            // txtPinpTripWattCal
-            // 
-            this.txtPinpTripWattCal.Location = new System.Drawing.Point(227, 291);
-            this.txtPinpTripWattCal.Name = "txtPinpTripWattCal";
-            this.txtPinpTripWattCal.Size = new System.Drawing.Size(58, 20);
-            this.txtPinpTripWattCal.TabIndex = 264;
-            // 
-            // txtSWRTripCal
-            // 
-            this.txtSWRTripCal.Location = new System.Drawing.Point(227, 320);
-            this.txtSWRTripCal.Name = "txtSWRTripCal";
-            this.txtSWRTripCal.Size = new System.Drawing.Size(58, 20);
-            this.txtSWRTripCal.TabIndex = 265;
-            // 
-            // txtPfwrdW2ADC
-            // 
-            this.txtPfwrdW2ADC.Location = new System.Drawing.Point(514, 51);
-            this.txtPfwrdW2ADC.Name = "txtPfwrdW2ADC";
-            this.txtPfwrdW2ADC.ReadOnly = true;
-            this.txtPfwrdW2ADC.Size = new System.Drawing.Size(58, 20);
-            this.txtPfwrdW2ADC.TabIndex = 237;
-            // 
-            // txtPreflW2ADC
-            // 
-            this.txtPreflW2ADC.Location = new System.Drawing.Point(514, 76);
-            this.txtPreflW2ADC.Name = "txtPreflW2ADC";
-            this.txtPreflW2ADC.ReadOnly = true;
-            this.txtPreflW2ADC.Size = new System.Drawing.Size(58, 20);
-            this.txtPreflW2ADC.TabIndex = 238;
-            // 
-            // txtPinpW2ADC
-            // 
-            this.txtPinpW2ADC.Location = new System.Drawing.Point(514, 102);
-            this.txtPinpW2ADC.Name = "txtPinpW2ADC";
-            this.txtPinpW2ADC.ReadOnly = true;
-            this.txtPinpW2ADC.Size = new System.Drawing.Size(58, 20);
-            this.txtPinpW2ADC.TabIndex = 239;
-            // 
-            // txtPfwrdMaxWatt
-            // 
-            this.txtPfwrdMaxWatt.Location = new System.Drawing.Point(378, 230);
-            this.txtPfwrdMaxWatt.Name = "txtPfwrdMaxWatt";
-            this.txtPfwrdMaxWatt.ReadOnly = true;
-            this.txtPfwrdMaxWatt.Size = new System.Drawing.Size(58, 20);
-            this.txtPfwrdMaxWatt.TabIndex = 257;
-            // 
-            // txtPreflWattMax
-            // 
-            this.txtPreflWattMax.Location = new System.Drawing.Point(378, 259);
-            this.txtPreflWattMax.Name = "txtPreflWattMax";
-            this.txtPreflWattMax.ReadOnly = true;
-            this.txtPreflWattMax.Size = new System.Drawing.Size(58, 20);
-            this.txtPreflWattMax.TabIndex = 258;
-            // 
-            // txtPinpWattMax
-            // 
-            this.txtPinpWattMax.Location = new System.Drawing.Point(378, 291);
-            this.txtPinpWattMax.Name = "txtPinpWattMax";
-            this.txtPinpWattMax.ReadOnly = true;
-            this.txtPinpWattMax.Size = new System.Drawing.Size(58, 20);
-            this.txtPinpWattMax.TabIndex = 259;
-            // 
-            // txtSWRMax
-            // 
-            this.txtSWRMax.Location = new System.Drawing.Point(378, 320);
-            this.txtSWRMax.Name = "txtSWRMax";
-            this.txtSWRMax.ReadOnly = true;
-            this.txtSWRMax.Size = new System.Drawing.Size(58, 20);
-            this.txtSWRMax.TabIndex = 260;
-            // 
-            // txtPfwrdADC2W
-            // 
-            this.txtPfwrdADC2W.Location = new System.Drawing.Point(431, 51);
-            this.txtPfwrdADC2W.Name = "txtPfwrdADC2W";
-            this.txtPfwrdADC2W.ReadOnly = true;
-            this.txtPfwrdADC2W.Size = new System.Drawing.Size(58, 20);
-            this.txtPfwrdADC2W.TabIndex = 232;
-            // 
-            // txtPreflADC2W
-            // 
-            this.txtPreflADC2W.Location = new System.Drawing.Point(431, 76);
-            this.txtPreflADC2W.Name = "txtPreflADC2W";
-            this.txtPreflADC2W.ReadOnly = true;
-            this.txtPreflADC2W.Size = new System.Drawing.Size(58, 20);
-            this.txtPreflADC2W.TabIndex = 233;
-            // 
-            // txtPinpADC2W
-            // 
-            this.txtPinpADC2W.Location = new System.Drawing.Point(431, 102);
-            this.txtPinpADC2W.Name = "txtPinpADC2W";
-            this.txtPinpADC2W.ReadOnly = true;
-            this.txtPinpADC2W.Size = new System.Drawing.Size(58, 20);
-            this.txtPinpADC2W.TabIndex = 234;
-            // 
-            // txtPfwrdWattCal
-            // 
-            this.txtPfwrdWattCal.Location = new System.Drawing.Point(153, 230);
-            this.txtPfwrdWattCal.Name = "txtPfwrdWattCal";
-            this.txtPfwrdWattCal.Size = new System.Drawing.Size(58, 20);
-            this.txtPfwrdWattCal.TabIndex = 242;
-            // 
-            // txtSWRCal
-            // 
-            this.txtSWRCal.Location = new System.Drawing.Point(153, 320);
-            this.txtSWRCal.Name = "txtSWRCal";
-            this.txtSWRCal.Size = new System.Drawing.Size(58, 20);
-            this.txtSWRCal.TabIndex = 245;
-            // 
-            // txtPreflWattCal
-            // 
-            this.txtPreflWattCal.Location = new System.Drawing.Point(153, 259);
-            this.txtPreflWattCal.Name = "txtPreflWattCal";
-            this.txtPreflWattCal.Size = new System.Drawing.Size(58, 20);
-            this.txtPreflWattCal.TabIndex = 243;
-            // 
-            // txtPinpWattCal
-            // 
-            this.txtPinpWattCal.Location = new System.Drawing.Point(153, 291);
-            this.txtPinpWattCal.Name = "txtPinpWattCal";
-            this.txtPinpWattCal.Size = new System.Drawing.Size(58, 20);
-            this.txtPinpWattCal.TabIndex = 244;
+            this.label25.Text = "Forward ADC";
             // 
             // txtPfwrdADC
             // 
-            this.txtPfwrdADC.Location = new System.Drawing.Point(69, 51);
+            this.txtPfwrdADC.Location = new System.Drawing.Point(112, 41);
             this.txtPfwrdADC.Name = "txtPfwrdADC";
             this.txtPfwrdADC.ReadOnly = true;
             this.txtPfwrdADC.Size = new System.Drawing.Size(58, 20);
@@ -1299,7 +1313,7 @@
             // 
             // txtPreflADC
             // 
-            this.txtPreflADC.Location = new System.Drawing.Point(69, 76);
+            this.txtPreflADC.Location = new System.Drawing.Point(291, 41);
             this.txtPreflADC.Name = "txtPreflADC";
             this.txtPreflADC.ReadOnly = true;
             this.txtPreflADC.Size = new System.Drawing.Size(58, 20);
@@ -1307,7 +1321,7 @@
             // 
             // txtPinpADC
             // 
-            this.txtPinpADC.Location = new System.Drawing.Point(69, 102);
+            this.txtPinpADC.Location = new System.Drawing.Point(482, 41);
             this.txtPinpADC.Name = "txtPinpADC";
             this.txtPinpADC.ReadOnly = true;
             this.txtPinpADC.Size = new System.Drawing.Size(58, 20);
@@ -1315,43 +1329,15 @@
             // 
             // textBox32
             // 
-            this.textBox32.Location = new System.Drawing.Point(69, 128);
+            this.textBox32.Location = new System.Drawing.Point(697, 37);
             this.textBox32.Name = "textBox32";
             this.textBox32.ReadOnly = true;
             this.textBox32.Size = new System.Drawing.Size(58, 20);
             this.textBox32.TabIndex = 229;
             // 
-            // txtPfwrdADCcal
-            // 
-            this.txtPfwrdADCcal.Location = new System.Drawing.Point(68, 230);
-            this.txtPfwrdADCcal.Name = "txtPfwrdADCcal";
-            this.txtPfwrdADCcal.Size = new System.Drawing.Size(58, 20);
-            this.txtPfwrdADCcal.TabIndex = 247;
-            // 
-            // txtPreflADCcal
-            // 
-            this.txtPreflADCcal.Location = new System.Drawing.Point(68, 259);
-            this.txtPreflADCcal.Name = "txtPreflADCcal";
-            this.txtPreflADCcal.Size = new System.Drawing.Size(58, 20);
-            this.txtPreflADCcal.TabIndex = 249;
-            // 
-            // txtPinpADCcal
-            // 
-            this.txtPinpADCcal.Location = new System.Drawing.Point(69, 291);
-            this.txtPinpADCcal.Name = "txtPinpADCcal";
-            this.txtPinpADCcal.Size = new System.Drawing.Size(58, 20);
-            this.txtPinpADCcal.TabIndex = 251;
-            // 
-            // txtSWRADCcal
-            // 
-            this.txtSWRADCcal.Location = new System.Drawing.Point(69, 320);
-            this.txtSWRADCcal.Name = "txtSWRADCcal";
-            this.txtSWRADCcal.Size = new System.Drawing.Size(58, 20);
-            this.txtSWRADCcal.TabIndex = 253;
-            // 
             // txtPfwrdWatt
             // 
-            this.txtPfwrdWatt.Location = new System.Drawing.Point(154, 51);
+            this.txtPfwrdWatt.Location = new System.Drawing.Point(112, 65);
             this.txtPfwrdWatt.Name = "txtPfwrdWatt";
             this.txtPfwrdWatt.ReadOnly = true;
             this.txtPfwrdWatt.Size = new System.Drawing.Size(58, 20);
@@ -1359,7 +1345,7 @@
             // 
             // txtPreflWatt
             // 
-            this.txtPreflWatt.Location = new System.Drawing.Point(154, 76);
+            this.txtPreflWatt.Location = new System.Drawing.Point(291, 65);
             this.txtPreflWatt.Name = "txtPreflWatt";
             this.txtPreflWatt.ReadOnly = true;
             this.txtPreflWatt.Size = new System.Drawing.Size(58, 20);
@@ -1367,7 +1353,7 @@
             // 
             // txtPinpWatt
             // 
-            this.txtPinpWatt.Location = new System.Drawing.Point(154, 102);
+            this.txtPinpWatt.Location = new System.Drawing.Point(482, 65);
             this.txtPinpWatt.Name = "txtPinpWatt";
             this.txtPinpWatt.ReadOnly = true;
             this.txtPinpWatt.Size = new System.Drawing.Size(58, 20);
@@ -1375,7 +1361,7 @@
             // 
             // txtSWR
             // 
-            this.txtSWR.Location = new System.Drawing.Point(154, 128);
+            this.txtSWR.Location = new System.Drawing.Point(697, 63);
             this.txtSWR.Name = "txtSWR";
             this.txtSWR.ReadOnly = true;
             this.txtSWR.Size = new System.Drawing.Size(58, 20);
@@ -1401,7 +1387,7 @@
             this.tabPageTemperature.Location = new System.Drawing.Point(4, 22);
             this.tabPageTemperature.Name = "tabPageTemperature";
             this.tabPageTemperature.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTemperature.Size = new System.Drawing.Size(598, 355);
+            this.tabPageTemperature.Size = new System.Drawing.Size(854, 514);
             this.tabPageTemperature.TabIndex = 2;
             this.tabPageTemperature.Text = "Temperature";
             this.tabPageTemperature.UseVisualStyleBackColor = true;
@@ -1545,7 +1531,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 405);
+            this.ClientSize = new System.Drawing.Size(970, 664);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmCalibrationAndDetail";
@@ -1557,6 +1543,12 @@
             this.tabPageCurrent.PerformLayout();
             this.tabPagePower.ResumeLayout(false);
             this.tabPagePower.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPinp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPfwrdCalValsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCalibration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrefl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pforwardInterpValsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPfwrd)).EndInit();
             this.tabPageTemperature.ResumeLayout(false);
             this.tabPageTemperature.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -1629,18 +1621,6 @@
         private System.Windows.Forms.Button btnIC_SendCal;
         private System.Windows.Forms.Button btnIB_SendCal;
         private System.Windows.Forms.TextBox txtIC_ADCcal;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Button btnPfwrdSendCal;
-        private System.Windows.Forms.Button btnPreflSendCal;
-        private System.Windows.Forms.Button btnPinpSendCal;
-        private System.Windows.Forms.Button btnSWRSendCal;
-        private System.Windows.Forms.Button btnPfwrdCheck;
-        private System.Windows.Forms.Button btnPreflCheck;
-        private System.Windows.Forms.Button btnPinpCheck;
-        private System.Windows.Forms.Button btnSWRCheck;
         private System.Windows.Forms.TextBox txtPfwrdTripADC;
         private System.Windows.Forms.TextBox txtPinpTripADC;
         private System.Windows.Forms.TextBox txtTripSWRADC;
@@ -1649,46 +1629,14 @@
         private System.Windows.Forms.TextBox txtPreflTripWatt;
         private System.Windows.Forms.TextBox txtPinpTripWatt;
         private System.Windows.Forms.TextBox txtSWRTrip;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox txtPfwrdTripWattCal;
-        private System.Windows.Forms.TextBox txtPreflTripWattCal;
-        private System.Windows.Forms.TextBox txtPinpTripWattCal;
-        private System.Windows.Forms.TextBox txtSWRTripCal;
-        private System.Windows.Forms.TextBox txtPfwrdW2ADC;
-        private System.Windows.Forms.TextBox txtPreflW2ADC;
-        private System.Windows.Forms.TextBox txtPinpW2ADC;
-        private System.Windows.Forms.TextBox txtPfwrdMaxWatt;
-        private System.Windows.Forms.TextBox txtPreflWattMax;
-        private System.Windows.Forms.TextBox txtPinpWattMax;
-        private System.Windows.Forms.TextBox txtSWRMax;
-        private System.Windows.Forms.TextBox txtPfwrdADC2W;
-        private System.Windows.Forms.TextBox txtPreflADC2W;
-        private System.Windows.Forms.TextBox txtPinpADC2W;
-        private System.Windows.Forms.TextBox txtPfwrdWattCal;
-        private System.Windows.Forms.TextBox txtSWRCal;
-        private System.Windows.Forms.TextBox txtPreflWattCal;
-        private System.Windows.Forms.TextBox txtPinpWattCal;
         private System.Windows.Forms.TextBox txtPfwrdADC;
         private System.Windows.Forms.TextBox txtPreflADC;
         private System.Windows.Forms.TextBox txtPinpADC;
         private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox txtPfwrdADCcal;
-        private System.Windows.Forms.TextBox txtPreflADCcal;
-        private System.Windows.Forms.TextBox txtPinpADCcal;
-        private System.Windows.Forms.TextBox txtSWRADCcal;
         private System.Windows.Forms.TextBox txtPfwrdWatt;
         private System.Windows.Forms.TextBox txtPreflWatt;
         private System.Windows.Forms.TextBox txtPinpWatt;
@@ -1710,6 +1658,48 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button btnRefreshTemperatureTrip;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridView dgvPfwrd;
+        private System.Windows.Forms.BindingSource dtPfwrdCalValsBindingSource;
+        private dsCalibration dsCalibration;
+        private System.Windows.Forms.BindingSource pforwardInterpValsBindingSource;
+        private System.Windows.Forms.Button btnUpdateControllerPfwrd;
+        private System.Windows.Forms.Button btnCheckPfrwd;
+        private System.Windows.Forms.TextBox txtBoxPfwrdTripADC;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox txtBoxPfwrdTrip;
+        private System.Windows.Forms.TextBox txtBoxPinpTripADC;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtBoxPinpTrip;
+        private System.Windows.Forms.Button btnUpdateControllerPinp;
+        private System.Windows.Forms.Button btnCheckPinp;
+        private System.Windows.Forms.DataGridView dgvPinp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.TextBox txtBoxPreflTripADC;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtBoxPreflTrip;
+        private System.Windows.Forms.Button btnUpdateControllerPrefl;
+        private System.Windows.Forms.Button btnCheckPrefl;
+        private System.Windows.Forms.DataGridView dgvPrefl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn powerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aDCDataGridViewTextBoxColumn;
 
     }
 }

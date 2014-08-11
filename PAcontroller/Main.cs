@@ -44,7 +44,9 @@ namespace PAcontroller
             PowerVals = 12,
             Temperature = 13,
             TemperatureTrip = 14,
-            FW_VERSION = 15
+            FW_VERSION = 15,
+            PowerCalibrationADC2W_RC_B = 16,
+            PowerCalibrationW2ADC_RC_B = 17
         }
 
         public enum MsgIDsToMCU
@@ -74,7 +76,11 @@ namespace PAcontroller
             REQ_CAL_POWERS_ADC2W= 22,
             SET_STATUS_AUTOTX_TEMPERATURE = 23,
             REQ_TEMP_TRIP= 24,
-            SET_TEMP_TRIP = 25
+            SET_TEMP_TRIP = 25,
+            SET_CAL_POWERS_W2ADC_RC_B = 26,
+            SET_CAL_POWERS_ADC2W_RC_B = 27,
+            REQ_CAL_POWERS_W2ADC_RC_B = 28,
+            REQ_CAL_POWERS_ADC2W_RC_B = 29
         }
 
 

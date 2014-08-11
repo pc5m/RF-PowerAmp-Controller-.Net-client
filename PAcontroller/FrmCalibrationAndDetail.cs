@@ -16,6 +16,30 @@ namespace PAcontroller
     {
         public Communication comm;
 
+        public enum PowerType
+        {
+            Forward = 0,
+            Reflected = 1,
+            Input = 2,
+            SWR = 3,
+        }
+
+        BindingSource bsPfwrdCalValues = new BindingSource();
+        BindingSource bsPfwrd_RC_B_ADC2W = new BindingSource();
+        BindingSource bsPfwrd_RC_B_W2ADC = new BindingSource();
+
+        BindingSource bsPreflCalValues = new BindingSource();
+        BindingSource bsPrefl_RC_B_ADC2W = new BindingSource();
+        BindingSource bsPrefl_RC_B_W2ADC = new BindingSource();
+
+        BindingSource bsPinpCalValues = new BindingSource();
+        BindingSource bsPinp_RC_B_ADC2W = new BindingSource();
+        BindingSource bsPinp_RC_B_W2ADC = new BindingSource();
+
+        dsCalibration dsCal = new dsCalibration();  
+      
+        
+
         public FrmCalibrationAndDetail()
         {
             InitializeComponent();
@@ -23,15 +47,112 @@ namespace PAcontroller
 
         private void FormDetails_Load(object sender, EventArgs e)
         {
-            // messageList.CollectionChanged += new System.Collections.Specialized.NotifyCollectionChangedEventHandler(Messagelist_changed);
             btnIA_SendCal.Enabled = false;
             btnIB_SendCal.Enabled = false;
             btnIC_SendCal.Enabled = false;
             btnID_SendCal.Enabled = false;
-            btnPfwrdSendCal.Enabled = false;
-            btnPreflSendCal.Enabled = false;
-            btnPinpSendCal.Enabled = false;
-            btnSWRSendCal.Enabled = false;
+
+            bsPfwrdCalValues.DataSource = dsCal.dtPfwrdCalVals;
+            bsPfwrd_RC_B_ADC2W.DataSource = dsCal.dtPfwrd_RC_B_ADC2W;
+            bsPfwrd_RC_B_W2ADC.DataSource = dsCal.dtPfwrd_RC_B_W2ADC;
+
+
+            bsPreflCalValues.DataSource = dsCal.dtPreflCalVals;
+            bsPrefl_RC_B_ADC2W.DataSource = dsCal.dtPrefl_RC_B_ADC2W;
+            bsPrefl_RC_B_W2ADC.DataSource = dsCal.dtPrefl_RC_B_W2ADC;
+
+
+            bsPinpCalValues.DataSource = dsCal.dtPinpCalVals;
+            bsPinp_RC_B_ADC2W.DataSource = dsCal.dtPinp_RC_B_ADC2W;
+            bsPinp_RC_B_W2ADC.DataSource = dsCal.dtPinp_RC_B_W2ADC;
+
+            dgvPfwrd.DataSource = bsPfwrdCalValues;
+       //     dgvPfwrd_RC_B_ADC2W.DataSource = bsPfwrd_RC_B_ADC2W;
+       //     dgvPfwrd_RC_B_W2ADC.DataSource = bsPfwrd_RC_B_W2ADC;
+
+            dgvPrefl.DataSource = bsPreflCalValues;
+        //    dgvPrefl_RC_B_ADC2W.DataSource = bsPrefl_RC_B_ADC2W;
+        //    dgvPrefl_RC_B_W2ADC.DataSource = bsPrefl_RC_B_W2ADC;
+
+            dgvPinp.DataSource = bsPinpCalValues;
+            //    dgvPinp_RC_B_ADC2W.DataSource = bsPinp_RC_B_ADC2W;
+            //    dgvPinp_RC_B_W2ADC.DataSource = bsPinp_RC_B_W2ADC;
+
+            btnUpdateControllerPfwrd.Enabled = false;
+            btnUpdateControllerPrefl.Enabled = false;
+            btnUpdateControllerPinp.Enabled = false;
+        }
+
+        float Interpolate(Int16 x, List<Int16> xArray, List<float> RCArray, List<float> BArray, Int16 nrOfVals)
+        {
+            int i;
+            for (i = nrOfVals - 2; i > 0; i--)
+            {
+                if (x >= xArray[i]) break;
+            }
+            return (RCArray[i] * x + BArray[i]);
+        }
+
+        void LoadCalibrationTables(Message message, DataTable dtCalVals, DataTable dt_RC_B_ADC2W, DataTable dt_RC_B_W2ADC)
+        {
+            Byte NrofDatapoints = message.messageData[1];
+            // txtBoxNrPoints.Text = NrofDatapoints.ToString();
+            List<float> RClist = new List<float>();
+            List<float> Blist = new List<float>();
+            List<Int16> Xlist = new List<Int16>();
+
+            dtCalVals.Clear();
+            dt_RC_B_ADC2W.Clear();
+            dt_RC_B_W2ADC.Clear();
+            for (int i = 0; i < NrofDatapoints - 1; i++)
+            {
+                float RC, B;
+                RC = BitConverter.ToSingle(message.messageData.GetRange(12 + i * 4, 4).ToArray(), 0);
+                B = BitConverter.ToSingle(message.messageData.GetRange(28 + i * 4, 4).ToArray(), 0);
+                RClist.Add(RC);
+                Blist.Add(B);
+                dt_RC_B_ADC2W.Rows.Add(RC, B);
+            }
+            for (int i = 0; i < NrofDatapoints; i++)
+            {
+                Int16 x;
+                x = BitConverter.ToInt16(message.messageData.GetRange(2 + i * 2, 2).ToArray(), 0);
+                Xlist.Add(x);
+                dtCalVals.Rows.Add(0, x);
+            }
+            for (int i = 0; i < NrofDatapoints; i++)
+            {
+                Int16 x;
+                x = BitConverter.ToInt16(message.messageData.GetRange(2 + i * 2, 2).ToArray(), 0);
+                Xlist.Add(x);
+                // DataRow rw;
+                // dsCalibration.dtPfwrdCalValsRow PforwardRow;
+                // PforwardRow = dsCal.dtPfwrdCalVals[i];
+                // rw = dtCalVals.Rows[i];
+                dtCalVals.Rows[i]["Power"] = (Int16)Interpolate(x, Xlist, RClist, Blist, NrofDatapoints);
+            }
+
+        }
+
+
+        private void FillCalibration(Message message)
+        {
+            switch (message.messageData[0])
+            {
+                case (int)PowerType.Forward:
+                    LoadCalibrationTables(message, dsCal.dtPfwrdCalVals, dsCal.dtPfwrd_RC_B_ADC2W, dsCal.dtPfwrd_RC_B_W2ADC);
+
+                break;
+                case (int)PowerType.Reflected:
+                    LoadCalibrationTables(message, dsCal.dtPreflCalVals, dsCal.dtPrefl_RC_B_ADC2W, dsCal.dtPrefl_RC_B_W2ADC);
+                break;
+                case (int)PowerType.Input:
+                    LoadCalibrationTables(message, dsCal.dtPinpCalVals, dsCal.dtPinp_RC_B_ADC2W, dsCal.dtPinp_RC_B_W2ADC);
+                break;
+                case (int)PowerType.SWR:
+                    // to be implemented
+                break;
+            }
         }
 
         public void processMsg(Message message)
@@ -101,15 +222,11 @@ namespace PAcontroller
                     txtPreflTripWatt.Text = String.Format("{0:F0}", BitConverter.ToInt16(message.messageData.GetRange(2, 2).ToArray(), 0));
                     txtPinpTripWatt.Text = String.Format("{0:F0}", BitConverter.ToInt16(message.messageData.GetRange(4, 2).ToArray(), 0));
                     break;
-                case Main.MsgIDsFromMCU.PowerCalibrationADC2W:
-                    txtPfwrdADC2W.Text = String.Format("{0:F4}", BitConverter.ToSingle(message.messageData.GetRange(0, 4).ToArray(), 0));
-                    txtPreflADC2W.Text = String.Format("{0:F4}", BitConverter.ToSingle(message.messageData.GetRange(4, 4).ToArray(), 0));
-                    txtPinpADC2W.Text = String.Format("{0:F4}", BitConverter.ToSingle(message.messageData.GetRange(8, 4).ToArray(), 0));
+                case Main.MsgIDsFromMCU.PowerCalibrationW2ADC_RC_B:
+                    // not implemented yet , needed ?
                     break;
-                case Main.MsgIDsFromMCU.PowerCalibrationW2ADC:
-                    txtPfwrdW2ADC.Text = String.Format("{0:F4}", BitConverter.ToSingle(message.messageData.GetRange(0, 4).ToArray(), 0));
-                    txtPreflW2ADC.Text = String.Format("{0:F4}", BitConverter.ToSingle(message.messageData.GetRange(4, 4).ToArray(), 0));
-                    txtPinpW2ADC.Text = String.Format("{0:F4}", BitConverter.ToSingle(message.messageData.GetRange(8, 4).ToArray(), 0));
+                case Main.MsgIDsFromMCU.PowerCalibrationADC2W_RC_B:
+                    FillCalibration(message);
                     break;
                 default:
                     break;
@@ -143,8 +260,12 @@ namespace PAcontroller
         {
             comm.SendMessage(Main.MsgIDsToMCU.REQ_POWERS_TRIP_ADC);
             comm.SendMessage(Main.MsgIDsToMCU.REQ_POWERS_TRIP_VALS);
-            comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W);
-            comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_W2ADC);
+
+            //request power values
+            comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W_RC_B,(byte)PowerType.Forward);
+            comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W_RC_B,(byte)PowerType.Reflected);
+            comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W_RC_B,(byte)PowerType.Input);
+
             comm.SendMessage(Main.MsgIDsToMCU.SET_STATUS_AUTOTX_POWERS_ADC, 1);
         }
 
@@ -229,26 +350,6 @@ namespace PAcontroller
             return (succesADCcal & succesAmpCal & succesTripAmpCal);
         }
 
-        private bool CheckPowerTextBoxes(TextBox txt_PCal, TextBox txt_ADCcal, TextBox txt_TripPCal, out UInt16 PCal, out UInt16 ADCcal, out UInt16 TripPCal)
-        {
-            UInt16 _ADCcal, _TripPCal;
-            UInt16 _PCal;
-            bool succesPCal, succesADCcal, succesTripPCal;
-            succesPCal = UInt16.TryParse(txt_PCal.Text, out _PCal);
-            if (succesPCal & (_PCal > 0)) errorProvider1.SetError(txt_PCal, ""); else errorProvider1.SetError(txt_PCal, "numeric value must be bigger than 0");
-
-            succesADCcal = UInt16.TryParse(txt_ADCcal.Text, out _ADCcal);
-            if (succesADCcal & (_ADCcal > 0) & (_ADCcal <= 1023)) errorProvider1.SetError(txt_ADCcal, ""); else errorProvider1.SetError(txt_ADCcal, "integer value must be bigger than 0 and smaller than 1023");
-
-            succesTripPCal = UInt16.TryParse(txt_TripPCal.Text, out _TripPCal);
-            if (succesTripPCal & (_TripPCal > 0)) errorProvider1.SetError(txt_TripPCal, ""); else errorProvider1.SetError(txt_TripPCal, "value must be bigger than 0");
-
-            PCal = _PCal;
-            ADCcal = _ADCcal;
-            TripPCal = _TripPCal;
-            return (succesADCcal & succesPCal & succesTripPCal);
-        }
-
         private void btnIA_SendCal_Click(object sender, EventArgs e)
         {
             float IA_CalAmp2ADC, IA_CalADC2Amp;
@@ -305,98 +406,6 @@ namespace PAcontroller
             tabPageCurrent_Enter(null, null); // request refresh data
         }
 
-        private void btnPfwrdCheck_Click(object sender, EventArgs e)
-        {
-            UInt16 ADCcal, TripPwrdCal;
-            UInt16 PCal, MaxPower;
-            if (CheckPowerTextBoxes(txtPfwrdWattCal, txtPfwrdADCcal, txtPfwrdTripWattCal ,out PCal,  out ADCcal, out TripPwrdCal ) == true)
-            {
-                 MaxPower = Convert.ToUInt16((float) PCal / ADCcal * 1023);
-                 txtPfwrdMaxWatt.Text = MaxPower.ToString();
-                 btnPfwrdSendCal.Enabled = true;
-            }
-            else btnPfwrdSendCal.Enabled = false;
-        }
-
-        private void btnPreflCheck_Click(object sender, EventArgs e)
-        {
-            UInt16 ADCcal, TripPwrdCal;
-            UInt16 PCal, MaxPower;
-            if (CheckPowerTextBoxes(txtPreflWattCal, txtPreflADCcal, txtPreflTripWattCal, out PCal, out ADCcal, out TripPwrdCal) == true)
-            {
-                MaxPower = Convert.ToUInt16((float)PCal / ADCcal * 1023);
-                txtPreflWattMax.Text = MaxPower.ToString();
-                btnPreflSendCal.Enabled = true;
-            }
-            else btnPreflSendCal.Enabled = false;
-
-        }
-
-        private void btnPinpCheck_Click(object sender, EventArgs e)
-        {
-            UInt16 ADCcal, TripPwrdCal;
-            UInt16 PCal, MaxPower;
-            if (CheckPowerTextBoxes(txtPinpWattCal, txtPinpADCcal, txtPinpTripWattCal, out PCal, out ADCcal, out TripPwrdCal) == true)
-            {
-                MaxPower = Convert.ToUInt16((float)PCal / ADCcal * 1023);
-                txtPinpWattMax.Text = MaxPower.ToString();
-                btnPinpSendCal.Enabled = true;
-            }
-            else btnPinpSendCal.Enabled = false;
-        }
-
-        private void btnSWRCheck_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bntPfwrdSendCal_Click(object sender, EventArgs e)
-        {
-            float P_CalW2ADC, P_CalADC2W;
-            UInt16 P_CalTripW;
-            P_CalTripW = Convert.ToUInt16(txtPfwrdTripWattCal.Text);
-            P_CalW2ADC = Convert.ToSingle(txtPfwrdADCcal.Text) / Convert.ToSingle(txtPfwrdWattCal.Text);
-            P_CalADC2W = Convert.ToSingle(txtPfwrdWattCal.Text) / Convert.ToSingle(txtPfwrdADCcal.Text);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_CAL_POWERS_ADC2W, Main.POWER_FWRD, P_CalADC2W);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_CAL_POWERS_W2ADC, Main.POWER_FWRD, P_CalW2ADC);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_VAL, Main.POWER_FWRD, P_CalTripW);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_ADC, Main.POWER_FWRD, Convert.ToInt16(P_CalW2ADC * P_CalTripW));
-            tabPagePower_Enter(null, null); // request refresh data
-        }
-
-        private void btnPreflSendCal_Click(object sender, EventArgs e)
-        {
-            float P_CalW2ADC, P_CalADC2W;
-            UInt16 P_CalTripW;
-            P_CalTripW = Convert.ToUInt16(txtPreflTripWattCal.Text);
-            P_CalW2ADC = Convert.ToSingle(txtPreflADCcal.Text) / Convert.ToSingle(txtPreflWattCal.Text);
-            P_CalADC2W = Convert.ToSingle(txtPreflWattCal.Text) / Convert.ToSingle(txtPreflADCcal.Text);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_CAL_POWERS_ADC2W, Main.POWER_REFL, P_CalADC2W);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_CAL_POWERS_W2ADC, Main.POWER_REFL, P_CalW2ADC);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_VAL, Main.POWER_REFL, P_CalTripW);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_ADC, Main.POWER_REFL, Convert.ToInt16(P_CalW2ADC * P_CalTripW));
-            tabPagePower_Enter(null, null); // request refresh data
-        }
-
-        private void btnPinpSendCal_Click(object sender, EventArgs e)
-        {
-            float P_CalW2ADC, P_CalADC2W;
-            UInt16 P_CalTripW;
-            P_CalTripW = Convert.ToUInt16(txtPinpTripWattCal.Text);
-            P_CalW2ADC = Convert.ToSingle(txtPinpADCcal.Text) / Convert.ToSingle(txtPinpWattCal.Text);
-            P_CalADC2W = Convert.ToSingle(txtPinpWattCal.Text) / Convert.ToSingle(txtPinpADCcal.Text);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_CAL_POWERS_ADC2W, Main.POWER_IN, P_CalADC2W);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_CAL_POWERS_W2ADC, Main.POWER_IN, P_CalW2ADC);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_VAL, Main.POWER_IN, P_CalTripW);
-            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_ADC, Main.POWER_IN, Convert.ToInt16(P_CalW2ADC * P_CalTripW));
-            tabPagePower_Enter(null, null); // request refresh data
-        }
-
-        private void btnSWRSendCal_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabPageCurrent_Leave(object sender, EventArgs e)
         {
             comm.SendMessage(Main.MsgIDsToMCU.SET_STATUS_AUTOTX_CURRENTS_ADC,0);
@@ -406,5 +415,161 @@ namespace PAcontroller
         {
             comm.SendMessage(Main.MsgIDsToMCU.SET_STATUS_AUTOTX_POWERS_ADC, 0);
         }
+
+
+        private float CheckCalValuesAndTrip(BindingSource bsCalValues, BindingSource bsRC_B_ADC2W, BindingSource bsRC_B_W2ADC, Int16 Wtrip)
+        {
+            List<Int16> adcList = new List<Int16>();
+            List<Int16> powerList = new List<Int16>();
+
+            // sort ascending using the ADC column
+            bsCalValues.Sort = "ADC ASC";
+
+            ((DataTable)bsRC_B_ADC2W.DataSource).Clear();
+            ((DataTable)bsRC_B_W2ADC.DataSource).Clear();
+
+            foreach (DataRowView row in bsCalValues)
+            {
+                adcList.Add((Int16)row["ADC"]);
+                powerList.Add((Int16)row["Power"]);
+            }
+            // txtBoxNrPoints.Text = bsPfwrdCalValues.Count.ToString();
+
+            FillRCandBvals((DataTable)bsRC_B_ADC2W.DataSource, adcList, powerList);
+            FillRCandBvals((DataTable)bsRC_B_W2ADC.DataSource, powerList, adcList);
+
+            return LinearInterpolate(Wtrip, powerList, (DataTable)bsRC_B_W2ADC.DataSource);
+        }
+
+        private void btnCheckPfrwd_Click(object sender, EventArgs e)
+        {
+            Int16 PfwrdTrip;
+            if (Int16.TryParse(txtBoxPfwrdTrip.Text, out PfwrdTrip))
+            {
+                txtBoxPfwrdTripADC.Text = Convert.ToString(Convert.ToInt16(CheckCalValuesAndTrip(bsPfwrdCalValues, bsPfwrd_RC_B_ADC2W, bsPfwrd_RC_B_W2ADC, PfwrdTrip)));
+                btnUpdateControllerPfwrd.Enabled = true;
+            }
+            else btnUpdateControllerPfwrd.Enabled = false;
+        }
+
+        private void btnCheckPrefl_Click(object sender, EventArgs e)
+        {
+            Int16 PreflTrip;
+            if (Int16.TryParse(txtBoxPreflTrip.Text, out PreflTrip))
+            {
+                txtBoxPreflTripADC.Text = Convert.ToString(Convert.ToInt16(CheckCalValuesAndTrip(bsPreflCalValues, bsPrefl_RC_B_ADC2W, bsPrefl_RC_B_W2ADC, PreflTrip)));
+                btnUpdateControllerPrefl.Enabled = true;
+            }
+            else btnUpdateControllerPrefl.Enabled = false;
+        }
+
+        private void btnCheckPinput_Click(object sender, EventArgs e)
+        {
+            Int16 PinpTrip;
+            if (Int16.TryParse(txtBoxPinpTrip.Text, out PinpTrip))
+            {
+                txtBoxPinpTripADC.Text = Convert.ToString(Convert.ToInt16(CheckCalValuesAndTrip(bsPinpCalValues, bsPinp_RC_B_ADC2W, bsPinp_RC_B_W2ADC, PinpTrip)));
+                btnUpdateControllerPinp.Enabled = true;
+            }
+            else btnUpdateControllerPinp.Enabled = false;
+        }
+
+
+        private float LinearInterpolate(Int16 x, List<Int16> XvaluesList, DataTable RC_B_table)
+        {
+            int IndexFound = XvaluesList.FindIndex(delegate(Int16 xx)
+            {
+                return x <= xx;
+            }
+            );
+            if (IndexFound == 0) IndexFound = 1;
+            if (IndexFound == -1) IndexFound = XvaluesList.Count() - 1; //above last datapoint
+            return (Convert.ToSingle(RC_B_table.Rows[IndexFound - 1]["RC"]) * x + Convert.ToSingle(RC_B_table.Rows[IndexFound - 1]["B"]));
+        }
+
+        private void FillRCandBvals(DataTable RC_B_table, List<Int16> xArray, List<Int16> yArray)
+        {
+            RC_B_table.Clear();
+            float RC;
+            // for (int i = 1; i < xArray.Count() && i < 5; i++)
+            for (int i = 1; i < xArray.Count() ; i++)
+            {
+                RC = ((float)yArray[i] - yArray[i - 1]) / ((float)xArray[i] - xArray[i - 1]);
+                RC_B_table.Rows.Add(RC, (yArray[i] - xArray[i] * RC));
+            }
+        }
+
+        private void UpdateControllerPowerCal(PowerType powerType, BindingSource bsCalValues, BindingSource bsRC_B_vals)
+        {
+            UInt16[] CalList = new UInt16[5];
+            Single[] RCList = new  Single[4];
+            Single[] BList = new   Single[4];
+
+            // sort ascending using the ADC column
+            bsCalValues.Sort = "ADC ASC";
+
+            int i = 0;
+
+            foreach (DataRowView row in bsRC_B_vals)
+            {
+                i++;
+                RCList[i-1] = Convert.ToSingle(row["RC"]);
+                BList[i-1] =  Convert.ToSingle(row["B"]);
+                if (i == 4) break;
+            }
+
+            i = 0;
+            foreach (DataRowView row in bsCalValues)
+            {
+                i++; 
+                CalList[i-1] = Convert.ToUInt16(row["ADC"]);
+                if (i == 5) break;
+            }
+            comm.SendMessage(Main.MsgIDsToMCU.SET_CAL_POWERS_ADC2W_RC_B, (byte)powerType, (byte)i , CalList, RCList, BList );
+            tabPagePower_Enter(null, null); // request refresh data
+        }
+
+        private void btnUpdateControllerPfwrd_Click(object sender, EventArgs e)
+        {
+            UpdateControllerPowerCal(PowerType.Forward, bsPfwrdCalValues, bsPfwrd_RC_B_ADC2W);
+            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_VAL, Main.POWER_FWRD, Convert.ToInt16(txtBoxPfwrdTrip.Text));
+            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_ADC, Main.POWER_FWRD, Convert.ToInt16(txtBoxPfwrdTripADC.Text));
+
+        }
+
+        private void btnUpdateControllerPrefl_Click(object sender, EventArgs e)
+        {
+            UpdateControllerPowerCal(PowerType.Reflected, bsPreflCalValues, bsPrefl_RC_B_ADC2W);
+            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_VAL, Main.POWER_REFL, Convert.ToInt16(txtBoxPreflTrip.Text));
+            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_ADC, Main.POWER_REFL, Convert.ToInt16(txtBoxPreflTripADC.Text));
+            comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W_RC_B, (byte)PowerType.Reflected);
+        }
+
+        private void btnUpdateControllerPinp_Click(object sender, EventArgs e)
+        {
+            UpdateControllerPowerCal(PowerType.Input, bsPinpCalValues, bsPinp_RC_B_ADC2W);
+            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_VAL, Main.POWER_IN, Convert.ToInt16(txtBoxPinpTrip.Text));
+            comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_ADC, Main.POWER_IN, Convert.ToInt16(txtBoxPinpTripADC.Text));
+        }
+
+
+        //private void btnReloadPwrd_Click(object sender, EventArgs e)
+        //{
+        //    comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W_RC_B, (byte)PowerType.Forward);
+        //}
+
+        //private void btnReloadPrefl_Click(object sender, EventArgs e)
+        //{
+        //    comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W_RC_B, (byte)PowerType.Reflected);
+        //}
+
+        //private void btnReloadPinput_Click(object sender, EventArgs e)
+        //{
+        //    comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W_RC_B, (byte)PowerType.Input);
+        //}
+
+
+
+
     }
 }

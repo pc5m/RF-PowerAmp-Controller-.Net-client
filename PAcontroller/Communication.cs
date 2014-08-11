@@ -190,6 +190,13 @@ namespace PAcontroller
             port_sendSerialMessage(msg);
         }
 
+        public void SendMessage(Main.MsgIDsToMCU Id, Byte PowerType, Byte NrOfPoints, UInt16[] CalPoints, Single[] RCvals, Single[] Bvals)
+        {
+            Message msg = new Message();
+            msg.ConstructMessage(Id, PowerType, NrOfPoints, CalPoints, RCvals, Bvals);
+            port_sendSerialMessage(msg);
+        }
+
         //public void SendMessage(Main.MsgIDsToMCU Id, Single val)
         //{
         //    Message msg = new Message();

@@ -91,5 +91,20 @@ namespace PAcontroller
             id = (byte)Id;
             dlc = 0;
         }
+
+        public void ConstructMessage(Main.MsgIDsToMCU Id, Byte PowerType, Byte NrOfPoints, UInt16[] CalPoints, Single[] RCvals, Single[] Bvals)
+        {
+            id = (byte)Id;
+            messageData.Add(PowerType);
+            messageData.Add(NrOfPoints);
+            foreach (UInt16 data in CalPoints)
+                messageData.AddRange(BitConverter.GetBytes(data));
+            foreach (Single data in RCvals)
+                messageData.AddRange(BitConverter.GetBytes(data));
+            foreach (Single data in Bvals)
+                messageData.AddRange(BitConverter.GetBytes(data));
+            dlc = (byte)messageData.Count();
+        }
+
     }
 }
