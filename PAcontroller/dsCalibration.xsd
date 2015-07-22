@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCalibration" targetNamespace="http://tempuri.org/dsCalibration.xsd" xmlns:mstns="http://tempuri.org/dsCalibration.xsd" xmlns="http://tempuri.org/dsCalibration.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCalibration" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCalibration" msprop:Generator_UserDSName="dsCalibration">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtPfwrdCalVals" msprop:Generator_TableClassName="dtPfwrdCalValsDataTable" msprop:Generator_TableVarName="tabledtPfwrdCalVals" msprop:Generator_RowChangedName="dtPfwrdCalValsRowChanged" msprop:Generator_TablePropName="dtPfwrdCalVals" msprop:Generator_RowDeletingName="dtPfwrdCalValsRowDeleting" msprop:Generator_RowChangingName="dtPfwrdCalValsRowChanging" msprop:Generator_RowEvHandlerName="dtPfwrdCalValsRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPfwrdCalValsRowDeleted" msprop:Generator_RowClassName="dtPfwrdCalValsRow" msprop:Generator_UserTableName="dtPfwrdCalVals" msprop:Generator_RowEvArgName="dtPfwrdCalValsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Power" msprop:Generator_ColumnVarNameInTable="columnPower" msprop:Generator_ColumnPropNameInRow="Power" msprop:Generator_ColumnPropNameInTable="PowerColumn" msprop:Generator_UserColumnName="Power" type="xs:short" minOccurs="0" />
+              <xs:element name="ADC" msprop:Generator_ColumnVarNameInTable="columnADC" msprop:Generator_ColumnPropNameInRow="ADC" msprop:Generator_ColumnPropNameInTable="ADCColumn" msprop:Generator_UserColumnName="ADC" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPfwrd_RC_B_ADC2W" msprop:Generator_TableClassName="dtPfwrd_RC_B_ADC2WDataTable" msprop:Generator_TableVarName="tabledtPfwrd_RC_B_ADC2W" msprop:Generator_RowChangedName="dtPfwrd_RC_B_ADC2WRowChanged" msprop:Generator_TablePropName="dtPfwrd_RC_B_ADC2W" msprop:Generator_RowDeletingName="dtPfwrd_RC_B_ADC2WRowDeleting" msprop:Generator_RowChangingName="dtPfwrd_RC_B_ADC2WRowChanging" msprop:Generator_RowEvHandlerName="dtPfwrd_RC_B_ADC2WRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPfwrd_RC_B_ADC2WRowDeleted" msprop:Generator_RowClassName="dtPfwrd_RC_B_ADC2WRow" msprop:Generator_UserTableName="dtPfwrd_RC_B_ADC2W" msprop:Generator_RowEvArgName="dtPfwrd_RC_B_ADC2WRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RC" msprop:Generator_ColumnVarNameInTable="columnRC" msprop:Generator_ColumnPropNameInRow="RC" msprop:Generator_ColumnPropNameInTable="RCColumn" msprop:Generator_UserColumnName="RC" type="xs:double" minOccurs="0" />
+              <xs:element name="B" msprop:Generator_ColumnVarNameInTable="columnB" msprop:Generator_ColumnPropNameInRow="B" msprop:Generator_ColumnPropNameInTable="BColumn" msprop:Generator_UserColumnName="B" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPfwrd_RC_B_W2ADC" msprop:Generator_TableClassName="dtPfwrd_RC_B_W2ADCDataTable" msprop:Generator_TableVarName="tabledtPfwrd_RC_B_W2ADC" msprop:Generator_TablePropName="dtPfwrd_RC_B_W2ADC" msprop:Generator_RowDeletingName="dtPfwrd_RC_B_W2ADCRowDeleting" msprop:Generator_RowChangingName="dtPfwrd_RC_B_W2ADCRowChanging" msprop:Generator_RowEvHandlerName="dtPfwrd_RC_B_W2ADCRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPfwrd_RC_B_W2ADCRowDeleted" msprop:Generator_UserTableName="dtPfwrd_RC_B_W2ADC" msprop:Generator_RowChangedName="dtPfwrd_RC_B_W2ADCRowChanged" msprop:Generator_RowEvArgName="dtPfwrd_RC_B_W2ADCRowChangeEvent" msprop:Generator_RowClassName="dtPfwrd_RC_B_W2ADCRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RC" msprop:Generator_ColumnVarNameInTable="columnRC" msprop:Generator_ColumnPropNameInRow="RC" msprop:Generator_ColumnPropNameInTable="RCColumn" msprop:Generator_UserColumnName="RC" type="xs:double" minOccurs="0" />
+              <xs:element name="B" msprop:Generator_ColumnVarNameInTable="columnB" msprop:Generator_ColumnPropNameInRow="B" msprop:Generator_ColumnPropNameInTable="BColumn" msprop:Generator_UserColumnName="B" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPreflCalVals" msprop:Generator_TableClassName="dtPreflCalValsDataTable" msprop:Generator_TableVarName="tabledtPreflCalVals" msprop:Generator_TablePropName="dtPreflCalVals" msprop:Generator_RowDeletingName="dtPreflCalValsRowDeleting" msprop:Generator_RowChangingName="dtPreflCalValsRowChanging" msprop:Generator_RowEvHandlerName="dtPreflCalValsRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPreflCalValsRowDeleted" msprop:Generator_UserTableName="dtPreflCalVals" msprop:Generator_RowChangedName="dtPreflCalValsRowChanged" msprop:Generator_RowEvArgName="dtPreflCalValsRowChangeEvent" msprop:Generator_RowClassName="dtPreflCalValsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Power" msprop:Generator_ColumnVarNameInTable="columnPower" msprop:Generator_ColumnPropNameInRow="Power" msprop:Generator_ColumnPropNameInTable="PowerColumn" msprop:Generator_UserColumnName="Power" type="xs:short" minOccurs="0" />
+              <xs:element name="ADC" msprop:Generator_ColumnVarNameInTable="columnADC" msprop:Generator_ColumnPropNameInRow="ADC" msprop:Generator_ColumnPropNameInTable="ADCColumn" msprop:Generator_UserColumnName="ADC" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPrefl_RC_B_ADC2W" msprop:Generator_TableClassName="dtPrefl_RC_B_ADC2WDataTable" msprop:Generator_TableVarName="tabledtPrefl_RC_B_ADC2W" msprop:Generator_TablePropName="dtPrefl_RC_B_ADC2W" msprop:Generator_RowDeletingName="dtPrefl_RC_B_ADC2WRowDeleting" msprop:Generator_RowChangingName="dtPrefl_RC_B_ADC2WRowChanging" msprop:Generator_RowEvHandlerName="dtPrefl_RC_B_ADC2WRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPrefl_RC_B_ADC2WRowDeleted" msprop:Generator_UserTableName="dtPrefl_RC_B_ADC2W" msprop:Generator_RowChangedName="dtPrefl_RC_B_ADC2WRowChanged" msprop:Generator_RowEvArgName="dtPrefl_RC_B_ADC2WRowChangeEvent" msprop:Generator_RowClassName="dtPrefl_RC_B_ADC2WRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RC" msprop:Generator_ColumnVarNameInTable="columnRC" msprop:Generator_ColumnPropNameInRow="RC" msprop:Generator_ColumnPropNameInTable="RCColumn" msprop:Generator_UserColumnName="RC" type="xs:double" minOccurs="0" />
+              <xs:element name="B" msprop:Generator_ColumnVarNameInTable="columnB" msprop:Generator_ColumnPropNameInRow="B" msprop:Generator_ColumnPropNameInTable="BColumn" msprop:Generator_UserColumnName="B" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPrefl_RC_B_W2ADC" msprop:Generator_TableClassName="dtPrefl_RC_B_W2ADCDataTable" msprop:Generator_TableVarName="tabledtPrefl_RC_B_W2ADC" msprop:Generator_TablePropName="dtPrefl_RC_B_W2ADC" msprop:Generator_RowDeletingName="dtPrefl_RC_B_W2ADCRowDeleting" msprop:Generator_RowChangingName="dtPrefl_RC_B_W2ADCRowChanging" msprop:Generator_RowEvHandlerName="dtPrefl_RC_B_W2ADCRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPrefl_RC_B_W2ADCRowDeleted" msprop:Generator_UserTableName="dtPrefl_RC_B_W2ADC" msprop:Generator_RowChangedName="dtPrefl_RC_B_W2ADCRowChanged" msprop:Generator_RowEvArgName="dtPrefl_RC_B_W2ADCRowChangeEvent" msprop:Generator_RowClassName="dtPrefl_RC_B_W2ADCRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RC" msprop:Generator_ColumnVarNameInTable="columnRC" msprop:Generator_ColumnPropNameInRow="RC" msprop:Generator_ColumnPropNameInTable="RCColumn" msprop:Generator_UserColumnName="RC" type="xs:double" minOccurs="0" />
+              <xs:element name="B" msprop:Generator_ColumnVarNameInTable="columnB" msprop:Generator_ColumnPropNameInRow="B" msprop:Generator_ColumnPropNameInTable="BColumn" msprop:Generator_UserColumnName="B" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPinpCalVals" msprop:Generator_TableClassName="dtPinpCalValsDataTable" msprop:Generator_TableVarName="tabledtPinpCalVals" msprop:Generator_TablePropName="dtPinpCalVals" msprop:Generator_RowDeletingName="dtPinpCalValsRowDeleting" msprop:Generator_RowChangingName="dtPinpCalValsRowChanging" msprop:Generator_RowEvHandlerName="dtPinpCalValsRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPinpCalValsRowDeleted" msprop:Generator_UserTableName="dtPinpCalVals" msprop:Generator_RowChangedName="dtPinpCalValsRowChanged" msprop:Generator_RowEvArgName="dtPinpCalValsRowChangeEvent" msprop:Generator_RowClassName="dtPinpCalValsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Power" msprop:Generator_ColumnVarNameInTable="columnPower" msprop:Generator_ColumnPropNameInRow="Power" msprop:Generator_ColumnPropNameInTable="PowerColumn" msprop:Generator_UserColumnName="Power" type="xs:short" minOccurs="0" />
+              <xs:element name="ADC" msprop:Generator_ColumnVarNameInTable="columnADC" msprop:Generator_ColumnPropNameInRow="ADC" msprop:Generator_ColumnPropNameInTable="ADCColumn" msprop:Generator_UserColumnName="ADC" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPinp_RC_B_ADC2W" msprop:Generator_TableClassName="dtPinp_RC_B_ADC2WDataTable" msprop:Generator_TableVarName="tabledtPinp_RC_B_ADC2W" msprop:Generator_TablePropName="dtPinp_RC_B_ADC2W" msprop:Generator_RowDeletingName="dtPinp_RC_B_ADC2WRowDeleting" msprop:Generator_RowChangingName="dtPinp_RC_B_ADC2WRowChanging" msprop:Generator_RowEvHandlerName="dtPinp_RC_B_ADC2WRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPinp_RC_B_ADC2WRowDeleted" msprop:Generator_UserTableName="dtPinp_RC_B_ADC2W" msprop:Generator_RowChangedName="dtPinp_RC_B_ADC2WRowChanged" msprop:Generator_RowEvArgName="dtPinp_RC_B_ADC2WRowChangeEvent" msprop:Generator_RowClassName="dtPinp_RC_B_ADC2WRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RC" msprop:Generator_ColumnVarNameInTable="columnRC" msprop:Generator_ColumnPropNameInRow="RC" msprop:Generator_ColumnPropNameInTable="RCColumn" msprop:Generator_UserColumnName="RC" type="xs:double" minOccurs="0" />
+              <xs:element name="B" msprop:Generator_ColumnVarNameInTable="columnB" msprop:Generator_ColumnPropNameInRow="B" msprop:Generator_ColumnPropNameInTable="BColumn" msprop:Generator_UserColumnName="B" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPinp_RC_B_W2ADC" msprop:Generator_TableClassName="dtPinp_RC_B_W2ADCDataTable" msprop:Generator_TableVarName="tabledtPinp_RC_B_W2ADC" msprop:Generator_TablePropName="dtPinp_RC_B_W2ADC" msprop:Generator_RowDeletingName="dtPinp_RC_B_W2ADCRowDeleting" msprop:Generator_RowChangingName="dtPinp_RC_B_W2ADCRowChanging" msprop:Generator_RowEvHandlerName="dtPinp_RC_B_W2ADCRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPinp_RC_B_W2ADCRowDeleted" msprop:Generator_UserTableName="dtPinp_RC_B_W2ADC" msprop:Generator_RowChangedName="dtPinp_RC_B_W2ADCRowChanged" msprop:Generator_RowEvArgName="dtPinp_RC_B_W2ADCRowChangeEvent" msprop:Generator_RowClassName="dtPinp_RC_B_W2ADCRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RC" msprop:Generator_ColumnVarNameInTable="columnRC" msprop:Generator_ColumnPropNameInRow="RC" msprop:Generator_ColumnPropNameInTable="RCColumn" msprop:Generator_UserColumnName="RC" type="xs:double" minOccurs="0" />
+              <xs:element name="B" msprop:Generator_ColumnVarNameInTable="columnB" msprop:Generator_ColumnPropNameInRow="B" msprop:Generator_ColumnPropNameInTable="BColumn" msprop:Generator_UserColumnName="B" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

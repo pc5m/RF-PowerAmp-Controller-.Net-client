@@ -27,6 +27,8 @@ namespace PAcontroller
         private delegate void SetGuiDeleg(Message data);
 
 
+
+
         public enum MsgIDsFromMCU
         {
             Status = 0,
@@ -256,6 +258,7 @@ namespace PAcontroller
                     txtPfwrd.BackColor = System.Drawing.SystemColors.Window;
                     txtPrefl.BackColor = System.Drawing.SystemColors.Window;
                     txtPin.BackColor = System.Drawing.SystemColors.Window;
+                    txtSWR.BackColor = System.Drawing.SystemColors.Window;
                     txtTemp_A.BackColor = System.Drawing.SystemColors.Window;
                     txtTemp_B.BackColor = System.Drawing.SystemColors.Window;
                     txtTemp_C.BackColor = System.Drawing.SystemColors.Window;
@@ -275,9 +278,9 @@ namespace PAcontroller
                 case MsgIDsFromMCU.FW_VERSION:
                     lblConnectStatus.Text = "Connected, FW version:" + (message.messageData[0]).ToString();
                     btnConnect.Text = "Disconnect";
-                    communication.SendMessage(MsgIDsToMCU.SET_STATUS_AUTOTX_CURRENTS_VALS, 1);
-                    communication.SendMessage(MsgIDsToMCU.SET_STATUS_AUTOTX_POWERS_VALS, 1);
-                    communication.SendMessage(MsgIDsToMCU.SET_STATUS_AUTOTX_TEMPERATURE, 1);
+                     communication.SendMessage(MsgIDsToMCU.SET_STATUS_AUTOTX_CURRENTS_VALS, 1);
+                     communication.SendMessage(MsgIDsToMCU.SET_STATUS_AUTOTX_POWERS_VALS, 1);
+                     communication.SendMessage(MsgIDsToMCU.SET_STATUS_AUTOTX_TEMPERATURE, 1);
                     communication.SendMessage(MsgIDsToMCU.SET_STATUS_AUTOTX_STATUS, 1);
                     SSPAConnected = true;
                     lblPSUOnOff.Enabled = true;
@@ -328,6 +331,7 @@ namespace PAcontroller
             if (!communication.PortIsOpen)
             {
                  communication.SerialCommunicationInit(Properties.Settings.Default.COMx);
+                communication.ThresholdReached += new EventHandler<MyEventArgs> (communication_ThresholdReached);
             }
             if (communication.PortIsOpen)
             {
@@ -354,6 +358,17 @@ namespace PAcontroller
                 }
             }
 
+        }
+
+        void communication_ThresholdReached(object sender, MyEventArgs e)
+        {
+            // MessageBox.Show (e.BufferLength.ToString());
+            //   textBox1.Text = e.BufferLength.ToString();
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                textBox1.Text = e.BufferLength.ToString(); // runs on UI thread
+            });
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)

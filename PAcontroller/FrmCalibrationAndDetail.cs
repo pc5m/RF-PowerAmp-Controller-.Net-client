@@ -221,6 +221,7 @@ namespace PAcontroller
                     txtPfwrdTripWatt.Text = String.Format("{0:F0}", BitConverter.ToInt16(message.messageData.GetRange(0, 2).ToArray(), 0));
                     txtPreflTripWatt.Text = String.Format("{0:F0}", BitConverter.ToInt16(message.messageData.GetRange(2, 2).ToArray(), 0));
                     txtPinpTripWatt.Text = String.Format("{0:F0}", BitConverter.ToInt16(message.messageData.GetRange(4, 2).ToArray(), 0));
+                    txtSWRTrip.Text =   String.Format("{0:F0}", BitConverter.ToSingle(message.messageData.GetRange(6, 4).ToArray(), 0));
                     break;
                 case Main.MsgIDsFromMCU.PowerCalibrationW2ADC_RC_B:
                     // not implemented yet , needed ?
@@ -552,24 +553,9 @@ namespace PAcontroller
             comm.SendMessage(Main.MsgIDsToMCU.SET_POWERS_TRIP_ADC, Main.POWER_IN, Convert.ToInt16(txtBoxPinpTripADC.Text));
         }
 
-
-        //private void btnReloadPwrd_Click(object sender, EventArgs e)
-        //{
-        //    comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W_RC_B, (byte)PowerType.Forward);
-        //}
-
-        //private void btnReloadPrefl_Click(object sender, EventArgs e)
-        //{
-        //    comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W_RC_B, (byte)PowerType.Reflected);
-        //}
-
-        //private void btnReloadPinput_Click(object sender, EventArgs e)
-        //{
-        //    comm.SendMessage(Main.MsgIDsToMCU.REQ_CAL_POWERS_ADC2W_RC_B, (byte)PowerType.Input);
-        //}
-
-
-
-
+        private void btnUpdateControllerSWRtrip_Click(object sender, EventArgs e)
+        {
+            comm.SendMessage(Main.MsgIDsToMCU.SET_SWR_TRIP_VAL, Convert.ToSingle(txtBoxSWRtrip.Text));
+        }
     }
 }

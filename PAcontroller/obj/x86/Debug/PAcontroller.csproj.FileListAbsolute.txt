@@ -1,0 +1,23 @@
+D:\visual studio projects\PAcontroller\PAcontroller\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\visual studio projects\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.Main.resources
+D:\visual studio projects\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.Properties.Resources.resources
+D:\visual studio projects\PAcontroller\PAcontroller\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\visual studio projects\PAcontroller\PAcontroller\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\visual studio projects\PAcontroller\PAcontroller\bin\Debug\PAcontroller.exe
+D:\visual studio projects\PAcontroller\PAcontroller\bin\Debug\PAcontroller.pdb
+D:\visual studio projects\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.exe
+D:\visual studio projects\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.pdb
+D:\visual studio projects\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.AboutBox1.resources
+D:\visual studio projects\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.FrmCalibrationAndDetail.resources
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.exe
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.pdb
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\bin\Debug\PAcontroller.exe
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\bin\Debug\PAcontroller.pdb
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.AboutBox1.resources
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.FrmCalibrationAndDetail.resources
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.Main.resources
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.Properties.Resources.resources
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.csproj.GenerateResource.Cache
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\bin\Debug\PAcontroller.exe.config
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.FrmSelectSerialPort.resources
+D:\cmobach\Documents\prv\ham radio\Projects\SSPA_SD2942\Software\PAcontroller\PAcontroller\obj\x86\Debug\PAcontroller.csprojResolveAssemblyReference.cache

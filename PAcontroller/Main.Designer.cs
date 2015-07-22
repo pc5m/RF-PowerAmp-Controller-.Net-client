@@ -63,6 +63,7 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.lblConnectStatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -372,11 +373,19 @@
             this.panel1.Size = new System.Drawing.Size(405, 48);
             this.panel1.TabIndex = 31;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(269, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 32;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 262);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblConnectStatus);
             this.Controls.Add(this.btnConnect);
@@ -459,6 +468,7 @@
         private System.Windows.Forms.Label lblConnectStatus;
         private System.Windows.Forms.ToolStripMenuItem serialPortTsMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

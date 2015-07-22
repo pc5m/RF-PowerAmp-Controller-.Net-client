@@ -4,13 +4,38 @@ using System.Linq;
 using System.Text;
 using System.IO.Ports;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace PAcontroller
 {
+
+    public class MyEventArgs: EventArgs
+    {
+            public int BufferLength { get; set; }
+            public MyEventArgs(int bufferLength)
+            {
+                BufferLength = bufferLength;
+            }
+    }
+    
     public class Communication
     {
 
         private SerialPort port;
+
+
+        public event EventHandler<MyEventArgs> ThresholdReached;
+
+
+
+        protected virtual void OnThresholdReached(int bytes)
+        {
+            var handler = ThresholdReached;
+            if (handler != null)
+            {
+                handler(this, new MyEventArgs(bytes));
+            }
+        }
 
         private enum State
         {
@@ -39,6 +64,7 @@ namespace PAcontroller
         public void SerialCommunicationInit()
         {
             port = new SerialPort("COM5", 115200, Parity.None, 8, StopBits.One);
+          //  port = new SerialPort("COM5", 9600, Parity.None, 8, StopBits.One);
             port.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);
             currentMessage = new Message();
             port.Open();
@@ -49,6 +75,7 @@ namespace PAcontroller
             try
             {
                 port = new SerialPort(COMx, 115200, Parity.None, 8, StopBits.One);
+                // port = new SerialPort(COMx, 9600, Parity.None, 8, StopBits.One);
                 port.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);
                 currentMessage = new Message();
                 port.Open();
@@ -76,6 +103,8 @@ namespace PAcontroller
             while (port.BytesToRead != 0)
             {
                 byte temp = (byte)port.ReadByte();
+                if (port.BytesToRead > 10) OnThresholdReached(port.BytesToRead);
+               //  Debug.WriteLine(port.BytesToRead.ToString()+":"+temp.ToString("x16"));
                 switch (status)
                 {
                     case State.unknown:
@@ -107,22 +136,12 @@ namespace PAcontroller
                             status = State.eof;
                         break;
                     case State.eof:
-                        //switch (rx.id)
-                        //{
-                        //    case 0:
-                        //        sendDate();
-                        //        break;
-                        //    case 1:
-                        //        readDate();
-                        //        break;
-                        //    default:
-                        //        break;
-                        //}
                         if (temp == 0x66)
                         {
                             lock (messageList)
                             {
                                 messageList.Add(currentMessage);
+                             //   Debug.WriteLine(currentMessage.id.ToString() + " " + currentMessage.messageData[0].ToString());
                             }
                             currentMessage = new Message();
                         }
@@ -197,12 +216,12 @@ namespace PAcontroller
             port_sendSerialMessage(msg);
         }
 
-        //public void SendMessage(Main.MsgIDsToMCU Id, Single val)
-        //{
-        //    Message msg = new Message();
-        //    msg.ConstructMessage(Id, val);
-        //    port_sendSerialMessage(msg);
-        //}
+        public void SendMessage(Main.MsgIDsToMCU Id, Single val)
+        {
+            Message msg = new Message();
+            msg.ConstructMessage(Id, val);
+            port_sendSerialMessage(msg);
+        }
 
         public void SendMessage(Main.MsgIDsToMCU Id, Byte ModId, Single val)
         {
